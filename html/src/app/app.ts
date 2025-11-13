@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from './components/header/header';
-import { Footer } from './components/footer/footer';
+import { Sidebar } from './components/sidebar/sidebar';
 // import { RemixIconModule } from 'angular-remix-icon';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Footer],
+  imports: [RouterOutlet,Sidebar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
