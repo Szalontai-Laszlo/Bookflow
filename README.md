@@ -1,4 +1,5 @@
 # Információk
+- Tagok: Szalontai László (Projektvezető), Tóth László Gábor
 - Nyelv: Magyar, Angol, Spanyol, Német
 - Design: Tailwind
 - Keretrendszer: Angular
