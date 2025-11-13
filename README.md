@@ -1,5 +1,9 @@
-# Library
-# Ötlet: https://www.youtube.com/watch?v=zKguO4oaAGs
+# Információk
+- Nyelv: Magyar, Angol, Spanyol, Német
+- Design: Tailwind
+- Keretrendszer: Angular
+- REST API Backend: PHP
+
 # BookFlow
 Ez a projekt generált a következő által: [Angular CLI](https://github.com/angular/angular-cli) verzió 20.3.8.
 
