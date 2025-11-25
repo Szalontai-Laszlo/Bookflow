@@ -1,5 +1,42 @@
-<div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
-    <!-- Title -->
+<div [ngClass]="{'w-20': !isLeftNavOpen(), 'w-72': isLeftNavOpen()}"
+     class="flex flex-col py-6 px-4 bg-gray-900 h-screen text-gray-200 relative duration-550">
+    <div class="logo h-[40px] flex items-center gap-x-2 mb-4">
+        <fa-icon [ngClass]="{'rotate-[360deg]': !isLeftNavOpen()}" [icon]="faBook" size="xl" 
+                 class="bg-rose-600 w-fit text-gray-900 p-2 rounded-lg duration-550">
+        </fa-icon>
+        <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="font-bold text-2xl duration-550">BookFlow</span>
+    </div>
+    <fa-icon [ngClass]="{'rotate-180': !isLeftNavOpen()}" [icon]="faArrowLeft" size="lg" (click)="isLeftNavOpen.set(!isLeftNavOpen())"
+             class="absolute text-gray-900 -right-4 top-8 h-8 w-8 bg-white flex items-center
+                    justify-center rounded-full border border-gray-900 cursor-pointer duration-550"></fa-icon>
+    <hr class="my-2 text-gray-600">
+
+    <div class="nav-items flex flex-col gap-y-4 mt-4">
+        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+            <fa-icon [icon]="faHome" size="lg"></fa-icon>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Kezdőlap</span>
+        </div>
+
+        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+            <fa-icon [icon]="faBookOpen" size="lg"></fa-icon>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Könyvek</span>
+        </div>
+
+        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+            <fa-icon [icon]="faBookmark" size="lg"></fa-icon>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Kölcsönzés</span>
+        </div>
+
+        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+            <fa-icon [icon]="faUsers" size="lg"></fa-icon>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Rólunk</span>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900 transition-transform duration-300 ease-in-out">
     <div class="text-gray-100 text-xl">
         <div class="p-2.5 mt-1 flex items-center w-auto">
             <svg class="w-[24px] h-[24px] text-gray-800 text-white bg-blue-600 rounded-md" aria-hidden="true"
@@ -8,7 +45,7 @@
                     d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
             </svg>
             <h1 class="font-bold text-gray-200 text-[15px] ml-2">BookFlow</h1>
-            <button type="button" onclick="hide()" id="hideButton" 
+            <button type="button" onclick="toggleSidebar()" id="hideButton" 
                     class="items-center justify-center ml-33
                            bg-white border border-gray-900 rounded-full 
                            text-gray-800 dark:text-white 
@@ -25,7 +62,7 @@
 
         <hr class="my-2 text-gray-600">
     </div>
-    <!-- Search Bar -->
+
     <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
             bg-gray-700 text-white">
         <svg class="w-[24px] h-[24px] text-gray-800 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +72,7 @@
         </svg>
         <input type="text" placeholder="Keresés" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none">
     </div>
-    <!-- Home Page Switch -->
+
     <a href="/">
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
                 hover:bg-blue-600 text-white">
@@ -50,7 +87,7 @@
             <span class="text-[15px] ml-2 text-gray-200">Kezdőlap</span>
         </div>
     </a>
-    <!-- Books Page Switch -->
+
     <a href="/books">
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
                 hover:bg-blue-600 text-white">
@@ -63,7 +100,7 @@
             <span class="text-[15px] ml-2 text-gray-200">Könyvek</span>
         </div>
     </a>
-    <!-- Loan Page Switch -->
+
     <a href="/loan">
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
                 hover:bg-blue-600 text-white">
@@ -76,7 +113,7 @@
             <span class="text-[15px] ml-2 text-gray-200">Kölcsönzés</span>
         </div>
     </a>
-    <!-- About Us Page Switch -->
+
     <a href="/about_us">
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
                 hover:bg-blue-600 text-white">
@@ -94,7 +131,7 @@
         </div>
     </a>
     <hr class="my-4 text-gray-600">
-    <!-- Login Page Switch -->
+
     <a href="/login" class="fixed bottom-5 left-2 w-71">
         <hr class="my-4 text-gray-600">
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer
@@ -115,7 +152,9 @@
 
 <script>
     function hide(){
-        document.getElementById(hideButton);
-        
+        let hideButton = document.getElementById(hideButton);
+        function hideButton() {
+            
+        }
     }
-</script>
+</script> -->

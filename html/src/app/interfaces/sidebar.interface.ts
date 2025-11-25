@@ -1,0 +1,7 @@
+export interface SidebarItem {
+    icon: any;
+    label: string;
+    route: string;
+    isActive?: boolean;
+    subItems?: SidebarItem[];
+}
