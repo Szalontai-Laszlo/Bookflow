@@ -8,19 +8,19 @@
                     d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
             </svg>
             <h1 class="font-bold text-gray-200 text-[15px] ml-2">BookFlow</h1>
-            <button type="button" class="items-center justify-center ml-33
-                                         bg-white border border-gray-900 rounded-full 
-                                         text-gray-800 dark:text-white 
-                                         hover:bg-gray-100 active:scale-95 
-                                         focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+            <button type="button" onclick="hide()" id="hideButton" 
+                    class="items-center justify-center ml-33
+                           bg-white border border-gray-900 rounded-full 
+                           text-gray-800 dark:text-white 
+                           hover:bg-gray-100 active:scale-95 
+                           focus:outline-none focus:ring-2 focus:ring-blue-500 transition
+                           lg:hidden">
                 <svg class="w-7 h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M5 12h14M5 12l4-4m-4 4 4 4" />
                 </svg>
             </button>
-            
-
         </div>
 
         <hr class="my-2 text-gray-600">
@@ -102,10 +102,20 @@
             <svg class="w-[24px] h-[24px] text-gray-800 text-white" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
-                    d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z"
+                    d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 
+                       2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 
+                       0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 
+                       0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z"
                     clip-rule="evenodd" />
             </svg>
             <span class="text-[15px] ml-2 text-gray-200">Bejelentkezés</span>
         </div>
     </a>
 </div>
+
+<script>
+    function hide(){
+        document.getElementById(hideButton);
+        
+    }
+</script>
