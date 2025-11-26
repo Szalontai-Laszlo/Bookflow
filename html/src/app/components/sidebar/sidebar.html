@@ -12,24 +12,23 @@
     <hr class="my-2 text-gray-600">
 
     <div class="nav-items flex flex-col gap-y-4 mt-4">
-        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
-            <fa-icon [icon]="faHome" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Kezdőlap</span>
-        </div>
+        @for (item of navItems; track $index)
+        {
+            <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer"
+                 (click)="activeRoute(item, $index)"
+                 [ngClass]="{'bg-light-white': item.isActive}">
+                <fa-icon [icon]="item.icon" size="lg"></fa-icon>
+                <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">{{item.label}}</span>
+            </div>
+        }
+    </div>
 
-        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
-            <fa-icon [icon]="faBookOpen" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Könyvek</span>
-        </div>
-
-        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
-            <fa-icon [icon]="faBookmark" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Kölcsönzés</span>
-        </div>
-
-        <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
-            <fa-icon [icon]="faUsers" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Rólunk</span>
+    
+    <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
+        <hr class="my-2 text-gray-600">
+        <div class="nav-item mt-auto gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+            <fa-icon [icon]="faArrowRightToBracket" size="lg"></fa-icon>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Bejelentkezés</span>
         </div>
     </div>
 </div>
