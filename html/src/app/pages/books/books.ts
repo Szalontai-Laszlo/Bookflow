@@ -9,15 +9,16 @@ import { Router } from '@angular/router';
 })
 export class Books {
   libraryBooks = [
-    { title: 'Dűne – A próféta', author: 'Frank Herbert', img: 'assets/books/dune2.jpg' },
-    { title: 'A király visszatér', author: 'J. R. R. Tolkien', img: 'assets/books/lotr3.jpg' },
-    { title: 'Alapítvány és Föld', author: 'Isaac Asimov', img: 'assets/books/foundation5.jpg' },
-    { title: 'Hyperion', author: 'Dan Simmons', img: 'assets/books/hyperion.jpg' },
-    { title: '1984', author: 'George Orwell', img: 'assets/books/1984.jpg' },
+    { title: 'Dűne – A próféta', author: 'Frank Herbert', img: 'assets/books/duneaprofeta.png' },
+    { title: 'A király visszatér', author: 'J. R. R. Tolkien', img: 'assets/books/akiralyvisszater.png' },
+    { title: 'Alapítvány és Föld', author: 'Isaac Asimov', img: 'assets/books/alapitvanyesfold.png' },
+    { title: 'Hyperion', author: 'Dan Simmons', img: 'assets/books/hyperion.png' },
+    { title: '1984', author: 'George Orwell', img: 'assets/books/1984.png' },
     { title: 'A Gyűrűk Ura', author: 'J. R. R. Tolkien', img: 'assets/books/lotr1.jpg' },
     { title: 'Szél Neve', author: 'Patrick Rothfuss', img: 'assets/books/nameofthewind.jpg' },
-    { title: 'Hobbit', author: 'J. R. R. Tolkien', img: 'assets/books/hobbit.jpg' },
-    { title: 'Neuromancer', author: 'William Gibson', img: 'assets/books/neuromancer.jpg' },
+    { title: 'Hobbit', author: 'J. R. R. Tolkien', img: 'assets/books/thehobbit.png' },
+    { title: 'Murder On The Orient Express', author: 'Agatha Christie', img: 'assets/books/murdertheorientexpress.png' },
+    { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling', img: '../../assets/books/harrypotterphilosophersstone.png'}
   ];
 
   constructor(private router: Router) {}
