@@ -26,9 +26,11 @@
     
     <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
         <hr class="my-2 text-gray-600">
-        <div class="nav-item mt-auto gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer">
+        <div class="nav-item mt-auto gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer"
+             (click)="activeRoute(login, 4)">
             <fa-icon [icon]="faArrowRightToBracket" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">Bejelentkezés</span>
+            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
+                  class="text-base font-medium duration-550">Bejelentkezés</span>
         </div>
     </div>
 </div>

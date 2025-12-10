@@ -3,5 +3,4 @@ export interface SidebarItem {
     label: string;
     route: string;
     isActive?: boolean;
-    subItems?: SidebarItem[];
 }

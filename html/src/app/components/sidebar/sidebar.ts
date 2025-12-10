@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  readonly faBook = faBook;
-  readonly faBookOpen = faBookOpen;
-  readonly faHome = faHome;
-  readonly faBookmark = faBookmark;
-  readonly faUsers = faUsers;
-  readonly faArrowLeft = faArrowLeft;
-  readonly faArrowRightToBracket = faArrowRightToBracket;
+  faBook = faBook;
+  faBookOpen = faBookOpen;
+  faHome = faHome;
+  faBookmark = faBookmark;
+  faUsers = faUsers;
+  faArrowLeft = faArrowLeft;
+  faArrowRightToBracket = faArrowRightToBracket;
 
   isLeftNavOpen = signal<boolean>(true);
   constructor(private router: Router) {}
@@ -50,7 +50,14 @@ export class Sidebar {
       route: '/about_us',
       isActive: false
     },
+
   ];
+  login: SidebarItem = {
+    icon: this.faArrowRightToBracket,
+    label: 'Bejelentkezés',
+    route: '/login',
+    isActive: false
+  };
 
   activeRoute(item: SidebarItem, index: number): void {
     this.navItems.map((navItem, i) => {
