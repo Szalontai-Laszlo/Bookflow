@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Nov 11. 11:23
+-- Létrehozás ideje: 2025. Dec 10. 13:11
 -- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- PHP verzió: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,10 @@ INSERT INTO `authors` (`id`, `name`) VALUES
 (1, 'J. K. Rowling'),
 (2, 'George Orwell'),
 (3, 'J. R. R. Tolkien'),
-(4, 'Agatha Christie');
+(4, 'Agatha Christie'),
+(5, 'Frank Herbert'),
+(6, 'Isaac Asimov'),
+(7, 'Dab Simmons');
 
 -- --------------------------------------------------------
 
@@ -53,18 +56,23 @@ CREATE TABLE `books` (
   `title` varchar(200) NOT NULL,
   `author_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `status` tinyint(2) NOT NULL
+  `status` tinyint(2) NOT NULL,
+  `img` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `books`
 --
 
-INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`) VALUES
-(1, 'Harry Potter and the Philosopher\'s Stone', 1, 1, 1),
-(2, '1984', 2, 4, 1),
-(3, 'The Hobbit', 3, 1, 0),
-(4, 'Murder on the Orient Express', 4, 3, 1);
+INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`, `img`) VALUES
+(1, 'Harry Potter and the Philosopher\'s Stone', 1, 1, 1, 'harrypotterphilosophersstone.png'),
+(2, '1984', 2, 4, 1, '1984.png'),
+(3, 'The Hobbit', 3, 1, 0, 'thehobbit.png'),
+(4, 'Murder on the Orient Express', 4, 3, 1, 'murdertheorientexpress.png'),
+(5, 'Düne - A próféta', 5, 3, 1, 'duneaprofeta.png'),
+(6, 'A király visszatér', 3, 4, 1, 'akiralyvisszater.png'),
+(7, 'Alapitvány és Föld', 6, 4, 1, 'alapitvanyesfold.png'),
+(8, 'Hyperion', 7, 2, 1, 'hyperion.png');
 
 -- --------------------------------------------------------
 
@@ -178,13 +186,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT a táblához `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT a táblához `borrows`
