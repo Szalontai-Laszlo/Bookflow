@@ -18,7 +18,7 @@ export class Books {
     { title: 'Szél Neve', author: 'Patrick Rothfuss', img: 'assets/books/nameofthewind.jpg' },
     { title: 'Hobbit', author: 'J. R. R. Tolkien', img: 'assets/books/thehobbit.png' },
     { title: 'Murder On The Orient Express', author: 'Agatha Christie', img: 'assets/books/murdertheorientexpress.png' },
-    { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling', img: '../../assets/books/harrypotterphilosophersstone.png'}
+    { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling', img: 'assets/books/harrypotterphilosophersstone.png'}
   ];
 
   constructor(private router: Router) {}
