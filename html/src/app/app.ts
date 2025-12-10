@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebar } from './components/sidebar/sidebar';
-// import { RemixIconModule } from 'angular-remix-icon';
 
 
 @Component({
