@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-    --color-dark-gray: #A9A9A9;
-    --color-light-white: rgba(255, 255, 255, 0.18);
-}
-
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }
