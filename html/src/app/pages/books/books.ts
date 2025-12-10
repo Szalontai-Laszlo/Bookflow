@@ -14,8 +14,8 @@ export class Books {
     { title: 'Alapítvány és Föld', author: 'Isaac Asimov', img: 'assets/books/alapitvanyesfold.png' },
     { title: 'Hyperion', author: 'Dan Simmons', img: 'assets/books/hyperion.png' },
     { title: '1984', author: 'George Orwell', img: 'assets/books/1984.png' },
-    { title: 'A Gyűrűk Ura', author: 'J. R. R. Tolkien', img: 'assets/books/lotr1.jpg' },
-    { title: 'Szél Neve', author: 'Patrick Rothfuss', img: 'assets/books/nameofthewind.jpg' },
+    { title: 'A Gyűrűk Ura', author: 'J. R. R. Tolkien', img: 'assets/books/agyurukura.png' },
+    { title: 'Szél Neve', author: 'Patrick Rothfuss', img: 'assets/books/aszelneve.png' },
     { title: 'Hobbit', author: 'J. R. R. Tolkien', img: 'assets/books/thehobbit.png' },
     { title: 'Murder On The Orient Express', author: 'Agatha Christie', img: 'assets/books/murdertheorientexpress.png' },
     { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling', img: 'assets/books/harrypotterphilosophersstone.png'}
