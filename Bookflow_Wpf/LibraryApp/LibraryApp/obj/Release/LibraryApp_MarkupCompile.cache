@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\xampp\htdocs\.vizsgaremek\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\
+C:\xampp\htdocs\.vizsgaremek\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Release\
 LibraryApp
 none
 false
-DEBUG;TRACE
+TRACE
 C:\xampp\htdocs\.vizsgaremek\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
 3-659507897
 
