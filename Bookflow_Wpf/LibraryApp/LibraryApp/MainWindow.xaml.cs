@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+
 
 namespace LibraryApp
 {
@@ -20,9 +23,12 @@ namespace LibraryApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root");
+        string query = "";
         public MainWindow()
         {
             InitializeComponent();
+            DataGridFeltoltes();
         }
 
         private void torlesgomb_Click(object sender, RoutedEventArgs e)
@@ -40,7 +46,6 @@ namespace LibraryApp
 
         }
 
-
         private void rentedbookwindow_Click(object sender, RoutedEventArgs e)
         {
             RentedBooksWindow rentedBooksWindow = new RentedBooksWindow();
@@ -54,5 +59,13 @@ namespace LibraryApp
             addbbokwindow.Show();
             this.Close();
         }
+        public void DataGridFeltoltes()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`, CASE WHEN `books`.status = 1 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id;", connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGrid_osszeskonyv.ItemsSource = dataTable.DefaultView;
+        }
+
     }
 }

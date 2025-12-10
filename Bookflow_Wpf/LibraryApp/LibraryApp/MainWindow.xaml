@@ -35,7 +35,7 @@
         <!-- Cím -->
         <TextBlock Grid.Row="1" Text="Bookflow Adminisztrátori felület"
                    FontSize="24" FontWeight="Bold"
-                   Foreground="White"
+                   Foreground="Black"
                    HorizontalAlignment="Center"
                    Margin="0 0 0 20"/>
 
@@ -44,7 +44,7 @@
             <Label Content="Keresés:" 
                    VerticalAlignment="Center" 
                    FontWeight="Bold" 
-                   Foreground="White"
+                   Foreground="Black"
                    Margin="0 0 10 0"/>
             <TextBox Width="300" Height="28" 
                      VerticalAlignment="Center"
@@ -55,41 +55,17 @@
         </StackPanel>
 
         <!-- Könyvek listája -->
-        <DataGrid Grid.Row="3"
-                  AutoGenerateColumns="False"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  IsReadOnly="True"
-                  SelectionMode="Single"
-                  Margin="0 0 0 10"
-                  Background="White"
-                  BorderBrush="#DDDDDD"
-                  BorderThickness="1"
-                  RowHeaderWidth="0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Cím" Binding="{Binding Cim}" Width="*"/>
-                <DataGridTextColumn Header="Szerző" Binding="{Binding Szerzo}" Width="200"/>
-                <DataGridTextColumn Header="Év" Binding="{Binding Ev}" Width="80"/>
-                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="150"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <DataGrid Name="dataGrid_osszeskonyv"
+                  HorizontalAlignment="Center" 
+                  Height="384" 
+                  Grid.Row="3" 
+                  VerticalAlignment="Center" 
+                  Width="740"></DataGrid>
 
         <!-- Műveleti gombok -->
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Hozzáadás" Width="100" Height="32" Foreground="White" Margin="0 0 10 0">
-                <Button.Background>
-                    <SolidColorBrush Color="#4CAF50"/>
-                </Button.Background>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="8" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
 
-            <Button Content="Szerkesztés" Width="100" Height="32" Foreground="White" Margin="0 0 10 0">
+            <Button Content="Szerkesztés" Width="104" Height="32" Foreground="White" Margin="0 0 540 0">
                 <Button.Background>
                     <SolidColorBrush Color="#2196F3"/>
                 </Button.Background>
@@ -102,7 +78,7 @@
                 </Button.Template>
             </Button>
 
-            <Button Content="Törlés" Width="100" Height="32" Foreground="White">
+            <Button Content="Törlés" Width="105" Height="32" Foreground="White">
                 <Button.Background>
                     <SolidColorBrush Color="#F44336"/>
                 </Button.Background>

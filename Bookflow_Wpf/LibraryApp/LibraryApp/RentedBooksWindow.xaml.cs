@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
+using System.Windows.Threading;
 
 namespace LibraryApp
 {
@@ -22,28 +23,18 @@ namespace LibraryApp
     /// </summary>
     public partial class RentedBooksWindow : Window
     {
+        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root");
         public RentedBooksWindow()
         {
             InitializeComponent();
-        }
-        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root");
-        MySqlCommand command;
-        string query = "";
-        private void fooldal_Click(object sender, RoutedEventArgs e)
-        
-         
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            DataGridFeltoltes();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(UpdateTimer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
         }
 
-        private void addbookwindow_Click(object sender, RoutedEventArgs e)
-        {
-            AddBookWindow addbbokwindow = new AddBookWindow();
-            addbbokwindow.Show();
-            this.Close();
-        }
         private void Open_Connection()
         {
             if (connection.State == ConnectionState.Closed)
@@ -58,12 +49,31 @@ namespace LibraryApp
                 connection.Close();
             }
         }
-        public void DataGrid_Feltolt()
+        private void fooldal_Click(object sender, RoutedEventArgs e)
+         
         {
-            MySqlDataAdapter Adapter = new MySqlDataAdapter("SELECT * FROM `books` WHERE `status` = '0'", connection);
-            DataTable dt = new DataTable();
-            Adapter.Fill(dt);
-            dataGrid_bereltkonyvek.ItemsSource = dt.DefaultView;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void addbookwindow_Click(object sender, RoutedEventArgs e)
+        {
+            AddBookWindow addbbokwindow = new AddBookWindow();
+            addbbokwindow.Show();
+            this.Close();
+        }
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            textBlock_ido.Text = DateTime.Now.ToString();
+        }
+        public void DataGridFeltoltes()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`,`borrows`.`borrow_start` AS `Bérlés Kezdete`, `borrows`.`borrow_end` AS `Bérlés Vége`, CASE WHEN `books`.status = 0 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id INNER JOIN `borrows` ON `books`.`id` = `borrows`.`book_id`;", connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGrid_bereltkonyvek.ItemsSource = dataTable.DefaultView;
         }
     }
 }
