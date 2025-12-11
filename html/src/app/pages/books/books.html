@@ -49,17 +49,21 @@
   </div>
 </div>
 <!-- Modal -->
-<div *ngIf="showModal()" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-  <div [ngClass]="modalClass()" class="bg-white rounded-lg shadow-lg w-96 p-6">
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl font-bold">{{ selectedBook?.title }}</h2>
-      <button (click)="closeModal()" class="text-gray-500 hover:text-gray-700">&times;</button>
+@if (showModal()) {
+  <div [ngClass]="modalClass()"
+       class="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50"
+       style="-webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">
+    <div class="bg-white rounded-lg shadow-lg w-96 p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold">{{ selectedBook?.title }}</h2>
+        <button (click)="closeModal()" class="text-gray-500 hover:text-gray-700">&times;</button>
+      </div>
+      <p class="text-gray-700 mb-4">Szerző: {{ selectedBook?.author }}</p>
+      <p class="text-gray-700 mb-4">Rövid talpaló: </p>
+      <img [src]="selectedBook?.img" class="w-full object-cover rounded mb-4">
+      <button (click)="closeModal()" [ngClass]="modalClass()" class="w-full py-2 bg-red-600 text-white rounded hover:bg-red-700">
+        Bezárás
+      </button>
     </div>
-    <p class="text-gray-700 mb-4">Szerző: {{ selectedBook?.author }}</p>
-    <p class="text-gray-700 mb-4">Rövid talpaló: </p>
-    <img [src]="selectedBook?.img" class="w-full object-cover rounded mb-4">
-    <button (click)="closeModal()" [ngClass]="modalClass()" class="w-full py-2 bg-red-600 text-white rounded hover:bg-red-700">
-      Bezárás
-    </button>
   </div>
-</div>
+}
