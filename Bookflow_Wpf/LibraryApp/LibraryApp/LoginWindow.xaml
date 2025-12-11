@@ -5,41 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="Bejelentkezés"
+        Width="800" Height="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow">
+
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#D3D3D3" Offset="0"/>
             <GradientStop Color="#2F2F2F" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
-        <TextBlock Text="Üdvözöljük a Bookflow Adminisztrátori felületén!"
-                   FontSize="24" FontWeight="Bold"
-                   Foreground="Black"
-                   HorizontalAlignment="Left"
-                   Margin="124,10,0,357" Width="629"/>
 
-        <TextBlock Text="Kérlek jelentkezz be!"
-                   FontSize="18" FontWeight="Bold"
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   Margin="0,104,0,285" Width="184"/>
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- header -->
+            <RowDefinition Height="*"/>
+            <!-- content -->
+            <RowDefinition Height="Auto"/>
+            <!-- footer / buttons -->
+        </Grid.RowDefinitions>
 
-        <TextBox HorizontalAlignment="Center" Height="32" Margin="0,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="363"/>
-        <TextBox HorizontalAlignment="Center" Height="32" Margin="0,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="364"/>
-        <Button Content="Bejelentkezés" Height="32" Foreground="White" Margin="158,250,178,58">
-            <Button.Background>
-                <SolidColorBrush Color="#4CAF50"/>
-            </Button.Background>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="8" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Label Content="Felhasználónév:" HorizontalAlignment="Left" Height="32" Margin="108,154,0,0" VerticalAlignment="Top" Width="106"/>
-        <Label Content="Jelszó:" HorizontalAlignment="Left" Height="32" Margin="135,217,0,0" VerticalAlignment="Top" Width="106"/>
+        <!-- Header: title left, exit button right -->
+        <DockPanel Grid.Row="0" LastChildFill="False" Margin="0,0,0,12">
+            <TextBlock Text="Üdvözöljük a Bookflow Adminisztrátori felületén!"
+                       FontSize="20" FontWeight="Bold"
+                       Foreground="Black"
+                       VerticalAlignment="Center"
+                       DockPanel.Dock="Left" RenderTransformOrigin="0.5,0.52" />
+            <Button Name="button_Kilepes" Content="X" Width="34" Height="28"
+                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                    DockPanel.Dock="Right" Click="button_Kilepes_Click"
+                    Margin="8,0,0,0" Foreground="White" FontWeight="Bold">
+                <Button.Background>
+                    <SolidColorBrush Color="#F44336"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DockPanel>
+
+        <!-- Content: centered form -->
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="420">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Kérlek jelentkezz be!" FontSize="18" FontWeight="Bold"
+                       Foreground="Black" HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,6"/>
+
+            <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,6,0,0">
+                <Label Content="Felhasználónév:" Foreground="Black" />
+                <TextBox Name="textBox_Username" Height="32" Padding="6" />
+                <Label Content="Jelszó:" Foreground="Black" Margin="0,8,0,0"/>
+                <PasswordBox Name="passwordBox_Password" Height="32" Padding="6" />
+            </StackPanel>
+        </Grid>
+
+        <!-- Footer: login button centered -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
+            <Button Content="Bejelentkezés" Width="160" Height="36" Foreground="White">
+                <Button.Background>
+                    <SolidColorBrush Color="#4CAF50"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="6" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
