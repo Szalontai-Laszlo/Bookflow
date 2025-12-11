@@ -23,12 +23,16 @@ namespace LibraryApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root");
+        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root; charset=utf8mb4");
         string query = "";
+        LoginWindow loginWindow = new LoginWindow();
         public MainWindow()
         {
             InitializeComponent();
             DataGridFeltoltes();
+            this.Hide();
+            loginWindow.Show();
+            Bejelentkezes();
         }
 
         private void torlesgomb_Click(object sender, RoutedEventArgs e)
@@ -67,5 +71,9 @@ namespace LibraryApp
             dataGrid_osszeskonyv.ItemsSource = dataTable.DefaultView;
         }
 
+        public void Bejelentkezes()
+        {
+
+        }
     }
 }

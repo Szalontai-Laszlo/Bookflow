@@ -23,7 +23,7 @@ namespace LibraryApp
     /// </summary>
     public partial class RentedBooksWindow : Window
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root");
+        MySqlConnection connection = new MySqlConnection("server=localhost; database=bookflow; uid=root; charset=utf8mb4");
         public RentedBooksWindow()
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace LibraryApp
         }
         public void DataGridFeltoltes()
         {
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`,`borrows`.`borrow_start` AS `Bérlés Kezdete`, `borrows`.`borrow_end` AS `Bérlés Vége`, CASE WHEN `books`.status = 0 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id INNER JOIN `borrows` ON `books`.`id` = `borrows`.`book_id`;", connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT `users`.`name`,`books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`,`borrows`.`borrow_start` AS `Bérlés Kezdete`, `borrows`.`borrow_end` AS `Bérlés Vége`, CASE WHEN `books`.status = 0 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id INNER JOIN `borrows` ON `books`.`id` = `borrows`.`book_id` INNER JOIN `users` ON `borrows`.`user_id` = `users`.`id`;", connection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGrid_bereltkonyvek.ItemsSource = dataTable.DefaultView;

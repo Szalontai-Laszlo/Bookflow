@@ -65,7 +65,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`, `img`) VALUES
-(1, 'Harry Potter and the Philosopher\'s Stone', 1, 1, 1, 'harrypotterphilosophersstone.png'),
+(1, 'Harry Potter and the Philosopher\s Stone', 1, 1, 1, 'harrypotterphilosophersstone.png'),
 (2, '1984', 2, 4, 1, '1984.png'),
 (3, 'The Hobbit', 3, 1, 0, 'thehobbit.png'),
 (4, 'Murder on the Orient Express', 4, 3, 1, 'murdertheorientexpress.png'),
