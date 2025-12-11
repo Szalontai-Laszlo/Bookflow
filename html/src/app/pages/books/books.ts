@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-books',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './books.html',
-  styleUrl: './books.css',
+  styleUrls: ['./books.css']   // <-- csak ez változott!
 })
 export class Books {
   libraryBooks = [
@@ -24,7 +26,19 @@ export class Books {
   constructor(private router: Router) {}
 
   goToLoan(book: any) {
-    // Lehetőség: átadni a kiválasztott könyvet query param-ként
     this.router.navigate(['/loan'], { queryParams: { title: book.title } });
+  }
+
+  isModalOpen = false;
+  selectedBook: any = null;
+
+  openModal(book: any) {
+    this.selectedBook = book;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.selectedBook = null;
   }
 }
