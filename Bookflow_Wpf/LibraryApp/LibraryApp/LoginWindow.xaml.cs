@@ -23,5 +23,10 @@ namespace LibraryApp
         {
             InitializeComponent();
         }
+
+        private void button_Kilepes_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
