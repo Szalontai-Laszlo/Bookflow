@@ -7,11 +7,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './books.html',
-  styleUrls: ['./books.css']   // <-- csak ez változott!
+  styleUrls: ['./books.css']  
 })
 export class Books {
   libraryBooks = [
-    { title: 'Dűne – A próféta', author: 'Frank Herbert', img: 'assets/books/duneaprofeta.png' },
+    { title: 'Dűne A próféta', author: 'Frank Herbert', img: 'assets/books/duneaprofeta.png' },
     { title: 'A király visszatér', author: 'J. R. R. Tolkien', img: 'assets/books/akiralyvisszater.png' },
     { title: 'Alapítvány és Föld', author: 'Isaac Asimov', img: 'assets/books/alapitvanyesfold.png' },
     { title: 'Hyperion', author: 'Dan Simmons', img: 'assets/books/hyperion.png' },
