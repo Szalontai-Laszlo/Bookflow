@@ -32,7 +32,9 @@
             <p class="text-sm text-gray-600">{{ book.author }}</p>
           </div>
 
-          <button (click)="openModal(book)" class="mt-4 w-full py-2 rounded-lg text-white font-medium 
+          <button (click)="openModal(book)" 
+                  class="mt-4 w-full py-2 rounded-lg
+                  text-white font-medium 
                   bg-gradient-to-r to-red-600 
                   shadow-md hover:shadow-lg 
                   transform hover:scale-105 transition-all duration-200">
@@ -48,7 +50,6 @@
   </div>
 </div>
 <!-- Modal -->
-<<<<<<< HEAD
 @if (showModal()) {
   <div [ngClass]="modalClass()"
        class="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50"

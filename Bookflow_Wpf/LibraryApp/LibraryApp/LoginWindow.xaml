@@ -66,16 +66,16 @@
                        Foreground="Black" HorizontalAlignment="Center" Grid.Row="0" Margin="0,0,0,6"/>
 
             <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,6,0,0">
-                <Label Content="Felhasználónév:" Foreground="Black" />
-                <TextBox Name="textBox_Username" Height="32" Padding="6" />
+                <Label Content="Email:" Foreground="Black" />
+                <TextBox Name="textBox_Email" Height="32" Padding="6" />
                 <Label Content="Jelszó:" Foreground="Black" Margin="0,8,0,0"/>
-                <PasswordBox Name="passwordBox_Password" Height="32" Padding="6" />
+                <PasswordBox Name="passwordBox_Jelszo" Height="32" Padding="6" />
             </StackPanel>
         </Grid>
 
         <!-- Footer: login button centered -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
-            <Button Content="Bejelentkezés" Width="160" Height="36" Foreground="White">
+            <Button Content="Bejelentkezés" Width="160" Height="36" Foreground="White" Click="Button_Click">
                 <Button.Background>
                     <SolidColorBrush Color="#4CAF50"/>
                 </Button.Background>
