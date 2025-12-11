@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -29,16 +29,38 @@ export class Books {
     this.router.navigate(['/loan'], { queryParams: { title: book.title } });
   }
 
-  isModalOpen = false;
+  showModal = signal<boolean>(false);
+  modalClass= signal<string>('');
   selectedBook: any = null;
 
   openModal(book: any) {
     this.selectedBook = book;
-    this.isModalOpen = true;
+    this.showModal.set(true);
+    this.modalClass.set('fade-in-up');
   }
 
   closeModal() {
-    this.isModalOpen = false;
-    this.selectedBook = null;
+    this.modalClass.set('fade-out-down');
+    
+    setTimeout(() => {
+      this.showModal.set(false);
+      this.selectedBook = null;
+      this.modalClass.set(''); // opcionális: töröljük az anim osztályt
+    }, 500);
   }
+
+  // isModalOpen = false;
+  // selectedBook: any = null;
+  // modalClass = signal<string>('');
+  // openModal(book: any) {
+  //   this.selectedBook = book;
+  //   this.isModalOpen = true;
+  //   this.modalClass.set('fade-in-up');
+  // }
+
+  // closeModal() {
+  //   this.isModalOpen = false;
+  //   this.selectedBook = null;
+  //   this.modalClass.set('fade-out-down');
+  // }
 }
