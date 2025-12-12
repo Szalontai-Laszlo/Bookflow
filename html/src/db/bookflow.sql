@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Dec 10. 13:11
+-- Létrehozás ideje: 2025. Dec 12. 12:14
 -- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.0.30
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,7 +65,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`, `img`) VALUES
-(1, 'Harry Potter and the Philosopher\s Stone', 1, 1, 1, 'harrypotterphilosophersstone.png'),
+(1, 'Harry Potter and the Philosophers Stone', 1, 1, 1, 'harrypotterphilosophersstone.png'),
 (2, '1984', 2, 4, 1, '1984.png'),
 (3, 'The Hobbit', 3, 1, 0, 'thehobbit.png'),
 (4, 'Murder on the Orient Express', 4, 3, 1, 'murdertheorientexpress.png'),
@@ -127,17 +127,20 @@ CREATE TABLE `users` (
   `name` varchar(200) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `gender` varchar(5) NOT NULL
+  `gender` varchar(5) NOT NULL,
+  `type` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`) VALUES
-(1, 'Kiss Anna', 'anna.kiss@example.com', '12345', 'F'),
-(2, 'Nagy Péter', 'peter.nagy@example.com', '12345', 'M'),
-(3, 'Tóth Lilla', 'lilla.toth@example.com', '12345', 'F');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`, `type`) VALUES
+(1, 'Kiss Anna', 'anna.kiss@example.com', '12345', 'F', 'U'),
+(2, 'Nagy Péter', 'peter.nagy@example.com', '12345', 'M', 'U'),
+(3, 'Tóth Lilla', 'lilla.toth@example.com', '12345', 'F', 'U'),
+(4, 'Tóth László Gábor', 'toth.laszlo-2021@keri.mako.hu', '1234Aa', 'M', 'A'),
+(5, 'Szalontai László', 'szalontai.laszlo-2021@keri.mako.hu', '1234Aa', 'M', 'A');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -210,7 +213,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Megkötések a kiírt táblákhoz
