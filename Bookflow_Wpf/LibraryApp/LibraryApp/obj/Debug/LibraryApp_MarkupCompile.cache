@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\xampp\htdocs\toth_laszlo_gabor\!Vizsgaremek\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\
+C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\
 LibraryApp
 none
 false
 DEBUG;TRACE
-C:\xampp\htdocs\toth_laszlo_gabor\!Vizsgaremek\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
-4-1476940924
+C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
+5-2129397040
 
-91539616203
-32-1422555041
-AddBookWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RentedBooksWindow.xaml;
+9806653962
+32-1895219310
+AddBookWindow.xaml;EditBooksWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RentedBooksWindow.xaml;
 
-True
+False
 

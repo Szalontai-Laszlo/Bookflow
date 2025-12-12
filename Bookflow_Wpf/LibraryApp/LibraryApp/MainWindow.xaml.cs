@@ -30,9 +30,9 @@ namespace LibraryApp
         {
             InitializeComponent();
             DataGridFeltoltes();
-            this.Hide();
-            loginWindow.Show();
-            Bejelentkezes();
+            //this.Hide();
+            //loginWindow.Show();
+            //Bejelentkezes();
         }
 
         private void torlesgomb_Click(object sender, RoutedEventArgs e)
@@ -73,6 +73,14 @@ namespace LibraryApp
 
         public void Bejelentkezes()
         {
+
+        }
+
+        private void dataGrid_osszeskonyv_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            EditBooksWindow editBooksWindow = new EditBooksWindow(dataGrid_osszeskonyv.SelectedItem);
+            editBooksWindow.Show();
 
         }
     }

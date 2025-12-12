@@ -15,31 +15,23 @@
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Menü -->
             <RowDefinition Height="Auto"/>
-            <!-- Cím -->
             <RowDefinition Height="Auto"/>
-            <!-- Kereső -->
             <RowDefinition Height="*"/>
-            <!-- Lista -->
             <RowDefinition Height="Auto"/>
-            <!-- Gombok -->
         </Grid.RowDefinitions>
 
-        <!-- Navigációs menü -->
         <Menu Grid.Row="0" Background="#444" Foreground="White" Margin="-20,-20,-21,20">
             <MenuItem Name="addbookwindow" Header="Új könyv felvétele" Click="addbookwindow_Click"/>
             <MenuItem Name="rentedbookwindow" Header="Bérelt könyvek" Click="rentedbookwindow_Click"/>
         </Menu>
 
-        <!-- Cím -->
         <TextBlock Grid.Row="1" Text="Bookflow Adminisztrátori felület"
                    FontSize="24" FontWeight="Bold"
                    Foreground="Black"
                    HorizontalAlignment="Center"
                    Margin="0 0 0 20"/>
 
-        <!-- Keresőmező -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 0 0 10">
             <Label Content="Keresés:" 
                    VerticalAlignment="Center" 
@@ -54,42 +46,23 @@
                      Background="White"/>
         </StackPanel>
 
-        <!-- Könyvek listája -->
         <DataGrid Name="dataGrid_osszeskonyv"
                   HorizontalAlignment="Center" 
                   Height="384" 
                   Grid.Row="3" 
                   VerticalAlignment="Center" 
+                  MouseDoubleClick="dataGrid_osszeskonyv_MouseDoubleClick"
+                  IsReadOnly="True"
                   Width="740"></DataGrid>
 
-        <!-- Műveleti gombok -->
-        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-
-            <Button Content="Szerkesztés" Width="104" Height="32" Foreground="White" Margin="0 0 540 0">
-                <Button.Background>
-                    <SolidColorBrush Color="#2196F3"/>
-                </Button.Background>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="8" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Button Content="Törlés" Width="105" Height="32" Foreground="White">
-                <Button.Background>
-                    <SolidColorBrush Color="#F44336"/>
-                </Button.Background>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="8" Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-        </StackPanel>
+        <Button Content="Törlés" Height="32" Foreground="White" Background="#F44336" Margin="233,415,248,-11" Grid.RowSpan="2" Grid.Row="3">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="8" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>

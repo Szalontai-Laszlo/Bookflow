@@ -48,10 +48,10 @@ namespace LibraryApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            query = "SELECT `email`, `password`, `type` FROM `users`";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection); 
-            DataTable dt = new DataTable();
-            if (dt[0] == textBox_Email.)
+            //query = "SELECT `email`, `password`, `type` FROM `users`";
+            //MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection); 
+            //DataTable dt = new DataTable();
+            //if (dt[0] == textBox_Email.)
         }
     }
 }
