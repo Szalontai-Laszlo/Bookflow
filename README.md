@@ -5,11 +5,32 @@
 - Keretrendszer: Angular
 - REST API Backend: PHP
 
-# Project felépítése
-- Miután a Github felületéről letöltöttük a projectet egy terminál oldalon a 
-- cd html kommand segítségével belekerülünk az angular oldalába
-- ezekután az npm install commanddal feltelepítjük az angulárt
-- végezetül npx ng serve vel elinditjuk az oldalt
+# Felhasználói Főoldal elinditása (Angular)
+### 1.lépés
+- Első soron miután leszedtük a Githibról a projectet az adatbázist felkell tölteni a XAMPP/MYSQL szerverére
+- Az adatbázis a a html/src/db könyvtárban található
+- Az adatbázis utf8mb4es formátumban kell feltölteni az adatbázisra.
+
+### 2.lépés
+
+- A XAMPP elinditása után egy terminált kell nyitni a Visual Studio Code-on belül és az alábbi kódókat kell beirni hogy elinditsuk a Weboldalunkat:
+
+```bash
+cd html
+```
+```bash
+npm install
+```
+```bash 
+npx ng serve
+```
+- Miután megvagyunk a terminál létrehozza általában a 4200-as portszámon a Weboldalt.
+
+- A Weboldalt ellehet érni terminálból az alábbi linkre kell CTRL + Bal Click segitségével.
+```
+https://localhost:4200/
+```
+
 
 
 # Projekthez tartozó linkek
