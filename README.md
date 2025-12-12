@@ -7,13 +7,13 @@
 
 # Felhasználói Főoldal elinditása (Angular)
 ### 1.lépés
-- Első soron miután leszedtük a Githibról a projectet az adatbázist felkell tölteni a XAMPP/MYSQL szerverére
-- Az adatbázis a a html/src/db könyvtárban található
-- Az adatbázis utf8mb4es formátumban kell feltölteni az adatbázisra.
+- Első soron miután leszedtük a Githubról a projectet az adatbázist felkell tölteni a XAMPP/MYSQL szerverére az adatbázist
+- Az adatbázis a html könyvtáron belül a src és azon belül a db könyvtárban található
+- Az adatbázis utf8mb4-es formátumban kell feltölteni az adatbázisra.
 
 ### 2.lépés
 
-- A XAMPP elinditása után egy terminált kell nyitni a Visual Studio Code-on belül és az alábbi kódókat kell beirni hogy elinditsuk a Weboldalunkat:
+- A XAMPP elinditása után egy "git bash" terminált kell nyitni a Visual Studio Code-on belül és az alábbi kódókat kell beirni hogy elinditsuk a Weboldalunkat:
 
 ```bash
 cd html
@@ -30,6 +30,8 @@ npx ng serve
 ```
 https://localhost:4200/
 ```
+# Adminisztrátori Panel (WPF)
+
 
 
 
