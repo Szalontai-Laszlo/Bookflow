@@ -1,13 +1,13 @@
-<Window x:Class="LibraryApp.CustomMessageBox"
+﻿<Window x:Class="LibraryApp.CustomMessageBox"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Megerosites" Height="200" Width="400"
         xml:lang="hu-HU">
 	<Grid>
-		<TextBlock x:Name="textBlockMessage" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,20,10,0" TextWrapping="Wrap"/>
+		<TextBlock x:Name="textBlockMessage" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,79,0,0" TextWrapping="Wrap"/>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
-			<Button x:Name="btnKijelentkezes" Content="Kijelentkezes" Width="120" Margin="10,0"/>
-			<Button x:Name="btnKilepes" Content="Kil&#233;p&#233;s" Width="120" Margin="10,0"/>
+            <Button x:Name="btnKijelentkezes" Content="🔐 Kijelentkez&#233;s" Width="120" Margin="10,0"/>
+			<Button x:Name="btnKilepes" Content="❌ Kil&#233;p&#233;s" Width="120" Margin="10,0"/>
 		</StackPanel>
 	</Grid>
 </Window>
