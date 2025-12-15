@@ -205,3 +205,5 @@ C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\ob
 C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp.pdb
 C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\EditBooksWindow.g.cs
 C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\EditBooksWindow.baml
+C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\CustomMessageBox.baml
+C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\CustomMessageBox.g.cs

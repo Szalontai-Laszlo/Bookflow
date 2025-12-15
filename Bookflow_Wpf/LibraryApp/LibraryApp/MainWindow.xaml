@@ -50,15 +50,30 @@
                   HorizontalAlignment="Center" 
                   Height="384" 
                   Grid.Row="3" 
-                  VerticalAlignment="Center" 
+                  VerticalAlignment="Top" 
                   MouseDoubleClick="dataGrid_osszeskonyv_MouseDoubleClick"
                   IsReadOnly="True"
                   Width="740"></DataGrid>
 
-        <Button Content="Törlés" Height="32" Foreground="White" Background="#F44336" Margin="233,415,248,-11" Grid.RowSpan="2" Grid.Row="3">
+        <Button Content="Törlés" Height="32" Foreground="White" Background="#F44336" Margin="233,385,248,-11" Grid.RowSpan="2" Grid.Row="3">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border CornerRadius="8" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Name="button_Kilepes" Content="X" Width="34" Height="28"
+        HorizontalAlignment="Right" VerticalAlignment="Top"
+        DockPanel.Dock="Right" Click="button_Kilepes_Click"
+        Margin="0,8,0,0" Foreground="White" FontWeight="Bold" Grid.RowSpan="2">
+            <Button.Background>
+                <SolidColorBrush Color="#F44336"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="4" Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>

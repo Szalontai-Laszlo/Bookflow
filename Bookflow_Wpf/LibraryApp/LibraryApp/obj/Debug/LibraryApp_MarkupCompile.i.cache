@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
-5-2129397040
+6-945848049
 
-10-1566535213
+11918578964
 32-1895219310
-AddBookWindow.xaml;EditBooksWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RentedBooksWindow.xaml;
+AddBookWindow.xaml;CustomMessageBox.xaml;EditBooksWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RentedBooksWindow.xaml;
 
-True
+False
 

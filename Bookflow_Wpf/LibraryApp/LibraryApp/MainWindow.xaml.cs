@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,12 +15,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 
 
 namespace LibraryApp
 {
-    /// <summary>
+    /// <summary>   
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -82,6 +83,31 @@ namespace LibraryApp
             EditBooksWindow editBooksWindow = new EditBooksWindow(dataGrid_osszeskonyv.SelectedItem);
             editBooksWindow.Show();
 
+        }
+
+        private void button_Kilepes_Click(object sender, RoutedEventArgs e)
+        {
+            var box = new CustomMessageBox("Válassz az alábbi lehetőségek közül!", "Kijelentkezés");
+            bool? result = box.ShowDialog();
+
+            if (result == true)
+            {
+                switch (box.Result)
+                {
+                    case CustomMessageBoxResult.Kijelentkezes:
+                        loginWindow = new LoginWindow();
+                        loginWindow.Show();
+                        this.Close();
+                        break;
+
+                    case CustomMessageBoxResult.Kilépés:
+                        Application.Current.Shutdown();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

@@ -18,7 +18,7 @@
            FontSize="25" FontWeight="Bold"
            Foreground="Black"
            VerticalAlignment="Top"
-           DockPanel.Dock="Left" RenderTransformOrigin="0.5,0.52" Margin="230,24,-256,0" Height="43" />
+           DockPanel.Dock="Left" RenderTransformOrigin="0.5,0.52" Margin="208,28,218,0" Height="43" />
         <Label Content="Könyv Címe:" 
                HorizontalAlignment="Left" 
                Height="29" Margin="125,125,0,0" 
@@ -59,7 +59,7 @@
         <Button Content="Szerkesztés" 
                 Height="32" 
                 Foreground="White" 
-                Margin="154,364,179,38">
+                Margin="125,300,208,68">
             <Button.Background>
                 <SolidColorBrush Color="#2196F3"/>
             </Button.Background>
