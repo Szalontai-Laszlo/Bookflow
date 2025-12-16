@@ -10,7 +10,7 @@
 - Első soron miután leszedtük a Githubról a projectet az adatbázist felkell tölteni a XAMPP/MYSQL szerverére az adatbázist
 - Az adatbázis neve: "bookflow"
 - Az adatbázis a html könyvtáron belül a src és azon belül a db könyvtárban található
-- Az adatbázis utf8mb4-es karakterkészletet kell alkalmazni az adatbázisra.
+- Az adatbázis `utf8mb4_general_ci` -es karakterkészletet kell alkalmazni az adatbázisra.
 
 ### 2.lépés
 
