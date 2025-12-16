@@ -21,7 +21,16 @@ app.get("/api/users", async (req, res) => {
 
 app.get("/api/books", async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT * FROM books");
+    const [rows] = await db.query("SELECT `books`.`id`,`books`.`title`,`authors`.`name`,`books`.`img`,`books`.`description` FROM `books` INNER JOIN `authors` ON `books`.`author_id` = `authors`.`id`");
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+app.get("/api/books/image", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT img FROM books");
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -42,7 +51,7 @@ app.get("/api/authors", async (req, res) => {
 
 //itt tudsz ugy keresni táblában hogy csak az adott id-t kapod meg pl: kéri az oldal hogy mi a 20 as könyv és instant odaadja az egész sort :P
 app.get("/api/users/:id", async (req, res) => {
-  req.params.id
+  res.params.id
 })
 
 // ide jön majd a build- kiszolgálás
