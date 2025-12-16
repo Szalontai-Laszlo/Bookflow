@@ -1,37 +1,75 @@
+<!-- Külső konténer: a sidebar szélességét dinamikusan állítja (összecsukott / nyitott állapot)
+     alapvető layout és stílusok -->
 <div [ngClass]="{'w-20': !isLeftNavOpen(), 'w-72': isLeftNavOpen()}"
-     class="flex flex-col py-6 px-4 bg-gray-900 h-screen text-gray-200 relative duration-550">
-    <div class="logo h-[40px] flex items-center gap-x-2 mb-4">
-        <fa-icon [ngClass]="{'rotate-[360deg]': !isLeftNavOpen()}" [icon]="faBook" size="xl" 
-                 class="bg-rose-600 w-fit text-gray-900 p-2 rounded-lg duration-550">
-        </fa-icon>
-        <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="font-bold text-2xl duration-550">BookFlow</span>
+     class="flex flex-col py-6 px-4 bg-gray-900 
+            h-screen text-gray-200 relative duration-550">
+
+  <!-- Logo sor: ikon + alkalmazás neve, belső igazítás és margó -->
+  <div class="logo h-[40px] flex items-center gap-x-2 mb-4">
+    <!-- Könyv ikon: vizuális márkajelzés, rotálható a sidebar állapota szerint -->
+    <fa-icon [ngClass]="{'rotate-[360deg]': !isLeftNavOpen()}" 
+             [icon]="icon.faBook" 
+             size="xl"
+             class="bg-rose-600 w-fit text-gray-900 
+                    p-2 rounded-lg duration-550">
+    </fa-icon>
+
+    <!-- Alkalmazás név: elrejtődik, ha a sidebar össze van csukva -->
+    <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
+          class="font-bold text-2xl duration-550">
+      BookFlow
+    </span>
+  </div>
+
+  <!-- Toggle ikon: a bal oldali navigation összehúzását/kinyitását vezérli -->
+  <fa-icon [ngClass]="{'rotate-180': !isLeftNavOpen()}"
+           [icon]="icon.faArrowLeft" 
+           size="lg"
+           (click)="isLeftNavOpen.set(!isLeftNavOpen())"
+           class="absolute text-gray-900 -right-4 top-8 h-8 w-8 bg-white flex items-center
+                  justify-center rounded-full border border-gray-900 cursor-pointer duration-550">
+  </fa-icon>
+
+  <!-- Elválasztó vonal: vizuális szétválasztás a logó és a menüpontok között -->
+  <hr class="my-2 text-gray-600">
+
+  <!-- Navigációs elemek konténere: felső rész, menüpontok listája függőlegesen -->
+  <div class="nav-items flex flex-col gap-y-4 mt-4">
+    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön, kattintás navigációt hív -->
+    <div *ngFor="let item of navItems; index as i" 
+         class="nav-item gap-x-2 p-3 flex items-center 
+                rounded-lg hover:bg-light-white cursor-pointer"
+         (click)="activeRoute(item, i)" 
+         [ngClass]="{'bg-light-white': item.isActive}">
+      <!-- Menüpont ikon: FontAwesome ikon az adott item-hez -->
+      <fa-icon [icon]="item.icon" size="lg"></fa-icon>
+
+      <!-- Menüpont címke: elrejtődik összecsukott sidebar esetén -->
+      <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
+            class="text-base font-medium duration-550">
+        {{item.label}}
+      </span>
     </div>
-    <fa-icon [ngClass]="{'rotate-180': !isLeftNavOpen()}" [icon]="faArrowLeft" size="lg" (click)="isLeftNavOpen.set(!isLeftNavOpen())"
-             class="absolute text-gray-900 -right-4 top-8 h-8 w-8 bg-white flex items-center
-                    justify-center rounded-full border border-gray-900 cursor-pointer duration-550"></fa-icon>
+  </div>
+
+  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés gomb/elem, mindig lent helyezkedik el -->
+  <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
+    <!-- Alsó elválasztó: vizuális szétválasztás -->
     <hr class="my-2 text-gray-600">
 
-    <div class="nav-items flex flex-col gap-y-4 mt-4">
-        @for (item of navItems; track $index)
-        {
-            <div class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer"
-                 (click)="activeRoute(item, $index)"
-                 [ngClass]="{'bg-light-white': item.isActive}">
-                <fa-icon [icon]="item.icon" size="lg"></fa-icon>
-                <span [ngClass]="{'scale-0': !isLeftNavOpen()}" class="text-base font-medium duration-550">{{item.label}}</span>
-            </div>
-        }
-    </div>
+    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál, szintén elrejthető címkével -->
+    <div class="nav-item mt-auto gap-x-2 p-3 flex items-center
+                rounded-lg hover:bg-light-white cursor-pointer"
+         (click)="activeRoute(login, 4)" 
+         [ngClass]="{'bg-light-white' : login.isActive}">
+      <!-- Ikon a bejelentkezéshez -->
+      <fa-icon [icon]="icon.faArrowRightToBracket" size="lg"></fa-icon>
 
-    
-    <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
-        <hr class="my-2 text-gray-600">
-        <div class="nav-item mt-auto gap-x-2 p-3 flex items-center rounded-lg hover:bg-light-white cursor-pointer"
-             (click)="activeRoute(login, 4)"
-             [ngClass] = "{'bg-light-white' : login.isActive}">
-            <fa-icon [icon]="faArrowRightToBracket" size="lg"></fa-icon>
-            <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
-                  class="text-base font-medium duration-550">Bejelentkezés</span>
-        </div>
+      <!-- Bejelentkezés szöveg: elrejthető, ha a sidebar össze van húzva -->
+      <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
+            class="text-base font-medium duration-550">
+        Bejelentkezés
+      </span>
     </div>
+  </div>
 </div>

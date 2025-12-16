@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule} from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { CommonModule} from '@angular/common';
 })
 export class Home {
 
-  // Friss könyvek blokk
+  // Legújabb könyvek, amik fel lettek véve az adatbázisba tömbben
   latestBooks = [
     { title: 'Dűne A próféta', author: 'Frank Herbert', img: 'assets/books/duneaprofeta.png' },
     { title: 'A király visszatér', author: 'J. R. R. Tolkien', img: 'assets/books/akiralyvisszater.png' },

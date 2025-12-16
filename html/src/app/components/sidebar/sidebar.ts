@@ -2,8 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBook,faBookOpen,faHome,faBookmark,faUsers,faArrowLeft,faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { SidebarItem } from '../../interfaces/sidebar.interface';
 import { Router } from '@angular/router';
+
+interface SidebarItem 
+{
+    icon: any;
+    label: string;
+    route: string;
+    isActive?: boolean;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -12,40 +19,37 @@ import { Router } from '@angular/router';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  faBook = faBook;
-  faBookOpen = faBookOpen;
-  faHome = faHome;
-  faBookmark = faBookmark;
-  faUsers = faUsers;
-  faArrowLeft = faArrowLeft;
-  faArrowRightToBracket = faArrowRightToBracket;
+
+  icon = {
+    faBook,faBookOpen,faHome,faBookmark,faUsers,faArrowLeft,faArrowRightToBracket
+  }
 
   isLeftNavOpen = signal<boolean>(true);
   constructor(private router: Router) {}
   navItems: SidebarItem[] = [
     {
-      icon: this.faHome,
+      icon: this.icon.faHome,
       label: 'Kezdőlap',
       route: '/',
       isActive: true
     },
 
     {
-      icon: this.faBookOpen,
+      icon: this.icon.faBookOpen,
       label: 'Könyvtár',
       route: '/books',
       isActive: false
     },
 
     {
-      icon: this.faBookmark,
+      icon: this.icon.faBookmark,
       label: 'Kölcsönzés',
       route: '/loan',
       isActive: false
     },
 
     {
-      icon: this.faUsers,
+      icon: this.icon.faUsers,
       label: 'Rólunk',
       route: '/about_us',
       isActive: false
@@ -53,7 +57,7 @@ export class Sidebar {
 
   ];
   login: SidebarItem = {
-    icon: this.faArrowRightToBracket,
+    icon: this.icon.faArrowRightToBracket,
     label: 'Bejelentkezés',
     route: '/login',
     isActive: false

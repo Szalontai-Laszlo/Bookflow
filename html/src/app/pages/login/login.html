@@ -1,43 +1,63 @@
+<!-- Külső wrapper: teljes viewport magasság, középre igazítás (flex) és háttér -->
 <div class="flex h-screen bg-gray-300 items-center justify-center">
+
+  <!-- Belépő panel: fehér doboz, lekerekítés, árnyék és max szélesség -->
   <div class="bg-white shadow-2xl rounded-xl w-full max-w-md p-8 animate-fade-in-up">
+
+    <!-- Oldal címe: nagy, középre igazított felirat -->
     <h1 class="text-3xl font-extrabold text-gray-900 mb-6 text-center drop-shadow-md">
       Bejelentkezés
     </h1>
 
+    <!-- Űrlap wrapper: mezők közti távolság (space-y-5) -->
     <form class="space-y-5">
+      <!-- Email mező blokk: label és input -->
       <div>
+        <!-- Email label: megnevezi a mezőt -->
         <label class="block text-gray-700 font-medium mb-2">Email</label>
+        <!-- Email input: type=email, placeholder és fókusz stílus -->
         <input type="email"
           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:outline-none"
           placeholder="Add meg az email címed">
       </div>
 
+      <!-- Jelszó mező blokk: label és jelszó input + toggle gomb -->
       <div>
+        <!-- Jelszó label -->
         <label class="block text-gray-700 font-medium mb-2">Jelszó</label>
+        <!-- Relatív konténer: a toggle gomb pozícionálásához -->
         <div class="relative">
+          <!-- Jelszó input: típusa a showPassword változótól függ -->
           <input [type]="showPassword ? 'text' : 'password'"
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:outline-none"
-            placeholder="Adj meg egy jelszót">
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:outline-none"
+                 placeholder="Adj meg egy jelszót">
+          <!-- Toggle gomb: megváltoztatja a showPassword állapotot -->
           <button type="button" (click)="togglePassword()"
-            class="absolute right-3 top-2 text-gray-600 hover:text-gray-900">
+                  class="absolute right-3 top-2 text-gray-600 hover:text-gray-900" 
+                  aria-label="Jelszó mutatása/elrejtése">
             {{ showPassword ? '🙈' : '👁️' }}
           </button>
         </div>
       </div>
 
+      <!-- Belépés gomb: teljes szélességű CTA, vizuális hover/aktiv állapotok -->
       <button type="button" class="w-full py-2 rounded-lg text-white font-medium 
                      bg-gradient-to-r from-rose-600 to-red-600 
                      hover:from-rose-700 hover:to-red-700 
                      shadow-md hover:shadow-lg 
-                     transform hover:scale-105 transition-all duration-200
+                     transform hover:scale-105 transition-all duration-500
                      cursor-pointer">
         Belépés
       </button>
     </form>
 
+    <!-- Regisztráció link sor: segít a felhasználónak regisztrálni, kattintható -->
     <p class="mt-6 text-center text-gray-600">
       Nincs fiókod?
-      <a (click)="goToRegister()" class="text-rose-600 font-semibold hover:underline cursor-pointer">Regisztrálj itt</a>
+      <!-- Link (Angular click): navigál a regisztrációs oldalra -->
+      <a (click)="goToRegister()" class="text-rose-600 font-semibold hover:underline cursor-pointer" role="button">
+        Regisztrálj itt
+      </a>
     </p>
   </div>
 </div>
