@@ -23,6 +23,7 @@ export class Books {
 
   constructor(private router: Router) {
     this.libraryBooks = this.fetchData();
+    this.libraryBooks.subscribe((x) => (console.log(x)))
   }
 
   goToLoan(book: any) {

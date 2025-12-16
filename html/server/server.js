@@ -21,17 +21,20 @@ app.get("/api/users", async (req, res) => {
 
 app.get("/api/books", async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT `books`.`id`,`books`.`title`,`authors`.`name`,`books`.`img`,`books`.`description` FROM `books` INNER JOIN `authors` ON `books`.`author_id` = `authors`.`id`");
+    const [rows] = 
+    await db.query("SELECT `books`.`id`,`books`.`title`,`authors`.`name` AS `authors_name`,`books`.`img`,`books`.`description` FROM `books` INNER JOIN `authors` ON `books`.`author_id` = `authors`.`id`");
     res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Database error" });
   }
 });
-app.get("/api/books/image", async (req, res) => {
+
+app.get("/api/books/last_book_id", async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT img FROM books");
-    res.json(rows);
+    const [rows] = 
+    await db.query("SELECT `id` FROM books ORDER BY `id` DESC LIMIT 1");
+    res.json({ lastUserId: rows[0].id });;
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Database error" });
