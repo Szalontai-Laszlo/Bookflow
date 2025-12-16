@@ -8,6 +8,7 @@
 # Felhasználói Főoldal elinditása (Angular)
 ### 1.lépés
 - Első soron miután leszedtük a Githubról a projectet az adatbázist felkell tölteni a XAMPP/MYSQL szerverére az adatbázist
+- Az adatbázis neve: "bookflow"
 - Az adatbázis a html könyvtáron belül a src és azon belül a db könyvtárban található
 - Az adatbázis utf8mb4-es formátumban kell feltölteni az adatbázisra.
 
