@@ -21,7 +21,7 @@
 
       <!-- Ciklus, ami létrehozza a Könyv kártyákat: 
            háttér, árnyék, hover effektek, és vertikális elrendezés -->
-      <div *ngFor="let book of libraryBooks; index as i"
+      <div *ngFor="let book of libraryBooks | async; index as i"
            class="bg-gradient-to-br from-white via-gray-100 to-gray-400
                  shadow-xl rounded-xl overflow-hidden 
                  hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.03] 
