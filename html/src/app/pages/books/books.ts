@@ -4,6 +4,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+type Book = {
+  title : string;
+  author: string;
+  img   : string;
+}
+
 @Component({
   selector: 'app-books',
   standalone: true,
@@ -25,12 +31,23 @@ export class Books {
   //   { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling', img: 'assets/books/harrypotterphilosophersstone.png'}
   // ];
 
+  books = signal<Book[]>([]);
   libraryBooks: Observable<object>;
 
   constructor(private router: Router) {
     this.libraryBooks = this.fetchData();
 
-    this.libraryBooks.subscribe((x) => console.log(x))
+    this.libraryBooks.subscribe((x) => {
+      // console.log(x);
+      // this.books.set(x);
+      const transformedBooks: Book[] = (x as any[]).map(item => ({
+        title: item.title,
+        author: `Author ID: ${item.author_id}`,
+        img: 'default-book-cover.jpg'        
+      }));
+
+      this.books.set(transformedBooks);
+    })
   }
 
   goToLoan(book: any) {
