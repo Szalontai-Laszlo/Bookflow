@@ -4,6 +4,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+type Book = {
+  title : string;
+  author: string;
+  img   : string;
+}
+
 @Component({
   selector: 'app-books',
   standalone: true,

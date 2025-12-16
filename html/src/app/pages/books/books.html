@@ -19,6 +19,7 @@
     <!-- Könyvek rácsa: responsive grid (2/3/5 oszlop) és résköz -->
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
 
+      
       <!-- Ciklus, ami létrehozza a Könyv kártyákat: 
            háttér, árnyék, hover effektek, és vertikális elrendezés -->
       <div *ngFor="let book of libraryBooks | async; index as i"
