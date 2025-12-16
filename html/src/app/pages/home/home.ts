@@ -1,35 +1,21 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule} from '@angular/common';
-import {
-  faSun,
-  faMoon
-} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements OnInit {
-  // Iconok a dark/light váltóhoz
-  faSun = faSun;
-  faMoon = faMoon;
+export class Home {
 
   // Friss könyvek blokk
-  latestBooks: any[] = [];
-    constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.http.get<any[]>('/api/getBooks.php').subscribe({
-      next: (data) => {
-        this.latestBooks = Array.isArray(data) ? data.slice(0, 5) : [];
-      },
-      error: () => {
-        this.latestBooks = [];
-      }
-    });
-  }
+  latestBooks = [
+    { title: 'Dűne A próféta', author: 'Frank Herbert', img: 'assets/books/duneaprofeta.png' },
+    { title: 'A király visszatér', author: 'J. R. R. Tolkien', img: 'assets/books/akiralyvisszater.png' },
+    { title: 'Alapítvány és Föld', author: 'Isaac Asimov', img: 'assets/books/alapitvanyesfold.png' },
+    { title: 'Hyperion', author: 'Dan Simmons', img: 'assets/books/hyperion.png' },
+    { title: '1984', author: 'George Orwell', img: 'assets/books/1984.png' },
+  ];
 }
