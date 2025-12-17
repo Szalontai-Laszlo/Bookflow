@@ -54,8 +54,8 @@ export class Sidebar {
       route: '/about_us',
       isActive: false
     },
-
   ];
+
   login: SidebarItem = {
     icon: this.icon.faArrowRightToBracket,
     label: 'Bejelentkezés',
@@ -63,11 +63,11 @@ export class Sidebar {
     isActive: false
   };
 
-  activeRoute(item: SidebarItem, index: number): void {
-    this.navItems.map((navItem, i) => {
-      navItem.isActive = i === index;
+  activeRoute(item: SidebarItem, index: number): void { 
+    this.navItems.forEach((navItem, i) => { 
+      navItem.isActive = i === index; }); 
 
-      this.router.navigateByUrl(item.route);
-    });
-  }
+    this.login.isActive = item === this.login; 
+
+    this.router.navigateByUrl(item.route); }
 }
