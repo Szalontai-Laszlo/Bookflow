@@ -30,18 +30,29 @@
         <!-- Név mező blokk -->
         <div>
           <!-- Input label: a mező megnevezése -->
-          <label class="block text-gray-700 font-medium mb-2">Név</label>
+          <label for="loan-name" 
+                 class="block text-gray-700 font-medium mb-2">
+            Név
+          </label>
           <!-- Név beviteli mező -->
-          <input type="text" placeholder="Add meg a neved"
-                 class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-rose-500">
+          <input type="text" 
+                 placeholder="Add meg a neved"
+                 class="w-full px-4 py-2 rounded-lg border 
+                        border-gray-300 focus:ring-2 focus:ring-rose-500"
+                 id="loan-name">
         </div>
 
         <!-- Könyv kiválasztó blokk -->
         <div>
           <!-- Select label -->
-          <label class="block text-gray-700 font-medium mb-2">Könyv</label>
+          <label for="loan-book_name" 
+                 class="block text-gray-700 font-medium mb-2">
+            Könyv
+          </label>
           <!-- Könyv select: dinamikusan töltött optionokkal (libraryBooks) -->
-          <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+          <select class="w-full px-4 py-2 rounded-lg border 
+                         border-gray-300 focus:ring-2 focus:ring-blue-500"
+                  id="loan-book_name">
             <option *ngFor="let book of libraryBooks; index as i">
               {{ book.title }} - {{ book.author }}
             </option>
@@ -52,15 +63,25 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <!-- Mettől (kezdő dátum) mező -->
           <div>
-            <label class="block text-gray-700 font-medium mb-2">Mettől</label>
+            <label for="loan-from" 
+                   class="block text-gray-700 font-medium mb-2">
+              Mettől
+            </label>
             <input type="date"
-                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500">
+                   class="w-full px-4 py-2 rounded-lg border 
+                          border-gray-300 focus:ring-2 focus:ring-yellow-500"
+                   id="loan-from">
           </div>
           <!-- Meddig (visszahozás) mező -->
           <div>
-            <label class="block text-gray-700 font-medium mb-2">Meddig</label>
+            <label for="loan-when" 
+                   class="block text-gray-700 font-medium mb-2">
+              Meddig
+            </label>
             <input type="date"
-                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500">
+                   class="w-full px-4 py-2 rounded-lg border 
+                          border-gray-300 focus:ring-2 focus:ring-yellow-500"
+                   id="loan-when">
           </div>
         </div>
 

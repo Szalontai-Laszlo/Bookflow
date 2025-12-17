@@ -8,11 +8,15 @@
     </h1>
 
     <!-- Regisztrációs űrlap: mezők közti távolság (space-y-5) -->
-    <form name="register" class="space-y-5">
+    <form name="register-form" 
+          class="space-y-5">
       <!-- Név mező blokk: label és input -->
       <div>
         <!-- A név mező címkéje -->
-        <label for="register-name" class="block text-gray-700 font-medium mb-2">Név</label>
+        <label for="register-name" 
+               class="block text-gray-700 font-medium mb-2">
+          Név
+        </label>
         <!-- Név input: egyszerű szövegmező, fókusz stílusokkal -->
         <input id="register-name" 
                type="text" 
@@ -24,25 +28,33 @@
       <!-- Email mező blokk: label és email input -->
       <div>
         <!-- Email label: megnevezi a mezőt -->
-        <label class="block text-gray-700 font-medium mb-2">Email</label>
+        <label for="register-email" 
+               class="block text-gray-700 font-medium mb-2">
+          Email
+        </label>
         <!-- Email input: type=email, placeholder és fókusz stílus -->
         <input type="email" 
                class="w-full px-4 py-2 border rounded-lg 
                       focus:ring-2 focus:ring-rose-500 focus:outline-none" 
-               placeholder="Add meg az email címed">
+               placeholder="Add meg az email címed"
+               id="register-email">
       </div>
 
       <!-- Jelszó mező blokk: label és jelszó input + toggle gomb -->
       <div>
         <!-- Jelszó label -->
-        <label class="block text-gray-700 font-medium mb-2">Jelszó</label>
+        <label for="register-password" 
+               class="block text-gray-700 font-medium mb-2">
+          Jelszó
+        </label>
         <!-- Relatív konténer: a toggle gomb pozícionálásához -->
         <div class="relative">
           <!-- Jelszó input: típusa a showPassword változótól függ -->
           <input [type]="showPassword ? 'text' : 'password'" 
                  class="w-full px-4 py-2 border rounded-lg 
                         focus:ring-2 focus:ring-rose-500 focus:outline-none" 
-                 placeholder="Add meg a jelszavad">
+                 placeholder="Add meg a jelszavad"
+                 id="register-password">
           <!-- Toggle gomb: megváltoztatja a showPassword állapotot -->
           <button type="button" 
                   (click)="togglePassword()" 
@@ -61,12 +73,18 @@
         <div class="flex items-center space-x-6">
           <!-- Nő rádió és címke -->
           <label class="flex items-center space-x-2">
-            <input type="radio" name="gender" value="female" class="text-rose-600 focus:ring-rose-500">
+            <input type="radio" 
+                   name="gender" 
+                   value="female" 
+                   class="text-rose-600 focus:ring-rose-500">
             <span>Nő</span>
           </label>
           <!-- Férfi rádió és címke -->
           <label class="flex items-center space-x-2">
-            <input type="radio" name="gender" value="male" class="text-rose-600 focus:ring-rose-500">
+            <input type="radio" 
+                   name="gender" 
+                   value="male" 
+                   class="text-rose-600 focus:ring-rose-500">
             <span>Férfi</span>
           </label>
         </div>
@@ -87,7 +105,10 @@
     <!-- Link: ha már van fiókja a felhasználónak, navigáljon a bejelentkezésre -->
     <p class="mt-6 text-center text-gray-600">
       Már van fiókod? 
-      <a (click)="goToLogin()" class="text-rose-600 font-semibold hover:underline cursor-pointer">Jelentkezz be</a>
+      <a (click)="goToLogin()" 
+         class="text-rose-600 font-semibold hover:underline cursor-pointer">
+        Jelentkezz be
+      </a>
     </p>
   </div>
 </div>

@@ -1,4 +1,5 @@
-<!-- Külső konténer: a sidebar szélességét dinamikusan állítja (összecsukott / nyitott állapot)
+<!-- Külső konténer: a sidebar szélességét dinamikusan állítja 
+     (összecsukott / nyitott állapot)
      alapvető layout és stílusok -->
 <div [ngClass]="{'w-20': true,
                  'md:w-20': !isLeftNavOpen(),
@@ -41,7 +42,8 @@
 
   <!-- Navigációs elemek konténere: felső rész, menüpontok listája függőlegesen -->
   <div class="nav-items flex flex-col gap-y-4 mt-4">
-    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön, kattintás navigációt hív -->
+    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön,
+         kattintás navigációt hív -->
     <div *ngFor="let item of navItems; index as i" 
          class="nav-item gap-x-2 p-3 flex items-center 
                 rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
@@ -61,12 +63,14 @@
     </div>
   </div>
 
-  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés gomb/elem, mindig lent helyezkedik el -->
+  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés 
+       gomb/elem, mindig lent helyezkedik el -->
   <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
     <!-- Alsó elválasztó: vizuális szétválasztás -->
     <hr class="my-2 text-gray-600">
 
-    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál, szintén elrejthető címkével -->
+    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál,
+         szintén elrejthető címkével -->
     <div class="nav-item mt-auto gap-x-2 p-3 flex items-center
                 rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
          (click)="activeRoute(login, 4)" 
