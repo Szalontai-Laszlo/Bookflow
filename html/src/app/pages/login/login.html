@@ -24,6 +24,7 @@
         <!-- Email input: type=email, placeholder és fókusz stílus -->
         <input type="email"
                id="login-email"
+               autocomplete="email"
                class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                       focus:ring-rose-500 focus:outline-none"
                placeholder="Add meg az email címed">
@@ -41,6 +42,7 @@
           <!-- Jelszó input: típusa a showPassword változótól függ -->
           <input [type]="showPassword ? 'text' : 'password'"
                  id="login-password"
+                 autocomplete="current-password"
                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                         focus:ring-rose-500 focus:outline-none"
                  placeholder="Adj meg egy jelszót">

@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBook,faBookOpen,faHome,faBookmark,faUsers,faArrowLeft,faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faBook,faBookOpen,faHome,faBookmark,
+  faUsers,faArrowLeft,faArrowRightToBracket, 
+  IconDefinition
+} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 interface SidebarItem 
 {
-    icon: any;
+    icon: IconDefinition;
     label: string;
     route: string;
     isActive?: boolean;
@@ -21,7 +25,8 @@ interface SidebarItem
 export class Sidebar {
 
   icon = {
-    faBook,faBookOpen,faHome,faBookmark,faUsers,faArrowLeft,faArrowRightToBracket
+    faBook,faBookOpen,faHome,faBookmark,
+    faUsers,faArrowLeft,faArrowRightToBracket
   }
 
   isLeftNavOpen = signal<boolean>(true);
@@ -64,10 +69,13 @@ export class Sidebar {
   };
 
   activeRoute(item: SidebarItem, index: number): void { 
+
     this.navItems.forEach((navItem, i) => { 
-      navItem.isActive = i === index; }); 
+      navItem.isActive = i === index; 
+    }); 
 
     this.login.isActive = item === this.login; 
 
-    this.router.navigateByUrl(item.route); }
+    this.router.navigateByUrl(item.route); 
+  }
 }
