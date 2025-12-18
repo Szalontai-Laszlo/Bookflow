@@ -15,7 +15,7 @@
 ### 2.lépés
 
 - Miután megnyitottuk a XAMPP-ot, illetve a projekt futásához szükséges dolgokat letöltöttük, amihez "git bash" terminált kell elindítani a Visual Studio Code-on belül, majd az alábbi kódot beírni:
-
+- `FONTOS: az oldalhoz tartozó, projekt futásához szükséges dolgokat csak egyszer kell letölteni, leállítás után csak elég az 1. illetve 3. parancsot beírni`
 ```bash 1.
 cd html
 ```
@@ -27,8 +27,6 @@ npm install
 ```bash 3.
 npx ng serve
 ```
-
-- `FONTOS: az oldalhoz tartozó, projekt futásához szükséges dolgokat csak egyszer kell letölteni, leállítás után csak elég az 1. illetve 3. parancsot beírni`
 
 - Illetve ahhoz, hogy működjön az adatbázisunk, el kell indítani a server.js-t, amihez nyitni kell egy PowerShell terminál, és a következő parancsokat beírni:
 
