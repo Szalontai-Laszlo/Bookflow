@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\",
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\.vizsgaremek\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\addbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\addbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\addbookwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\rentedbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\rentedbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\rentedbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\rentedbookswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\rentedbookswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\rentedbookswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -40,34 +40,32 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\MainWindow.xaml",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml",
               "RelativeToolTip": "LibraryApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-10T14:46:52.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T14:46:52.453Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAB+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:46:52.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T14:46:52.453Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AddBookWindow.xaml",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\AddBookWindow.xaml",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
               "RelativeToolTip": "LibraryApp\\AddBookWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-12-10T14:46:52.451Z",
@@ -77,39 +75,36 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AddBookWindow.xaml.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\AddBookWindow.xaml.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\AddBookWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T21:58:51.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T21:58:51.706Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "RentedBooksWindow.xaml",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\RentedBooksWindow.xaml",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
               "RelativeToolTip": "LibraryApp\\RentedBooksWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-10T14:46:52.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T14:46:52.452Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "RentedBooksWindow.xaml.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\RentedBooksWindow.xaml.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\.vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\RentedBooksWindow.xaml.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAYwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:46:52.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-10T14:46:52.372Z"
             }
           ]
         }

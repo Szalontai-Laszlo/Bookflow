@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\
+C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\
 LibraryApp
 none
 false
 DEBUG;TRACE
-C:\xampp\htdocs\toth_laszlo_gabor\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
+C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\App.xaml
 6-945848049
 
 10-1003199157
-32-1895219310
+32-266319177
 AddBookWindow.xaml;CustomMessageBox.xaml;EditBooksWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RentedBooksWindow.xaml;
 
 False
