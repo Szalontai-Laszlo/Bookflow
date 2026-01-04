@@ -23,11 +23,11 @@ export class Books {
 
   constructor(private router: Router) {
     this.libraryBooks = this.fetchData();
-    this.libraryBooks.subscribe((x) => (console.log(x)))
   }
 
   goToLoan(book: any) {
-    this.router.navigate(['/loan'], { queryParams: { title: book.title } });
+    this.router.navigate(['/loan'], 
+    { queryParams: { title: book.title } });
   }
 
   showModal = signal<boolean>(false);

@@ -1,12 +1,16 @@
-<!-- Fő konténer: az egész alkalmazás layoutját tartalmazza (sidebar + route tartalom) -->
+<!-- Fő konténer: az egész alkalmazás layoutját tartalmazza 
+     (sidebar + route tartalom) -->
 <div class="main-container flex h-screen w-full">
 
-  <!-- Oldalsáv komponens: navigáció és állandó menü (egyéni <app-sidebar> komponens) -->
+  <!-- Oldalsáv komponens: navigáció és állandó menü 
+       (egyéni <app-sidebar> komponens) -->
   <app-sidebar></app-sidebar>
 
-  <!-- Route tartalom konténer: a jobb oldali, dinamikusan változó oldalakat fogadja -->
+  <!-- Route tartalom konténer: a jobb oldali, 
+       dinamikusan változó oldalakat fogadja -->
   <div class="route-container flex-1">
-    <!-- Angular router helykitöltő: ide kerül be a kiválasztott oldal komponense -->
+    <!-- Angular router helykitöltő: ide kerül be 
+         a kiválasztott oldal komponense -->
     <router-outlet />
   </div>
 </div>

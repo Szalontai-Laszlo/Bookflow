@@ -1,6 +1,10 @@
-<!-- Külső konténer: a sidebar szélességét dinamikusan állítja (összecsukott / nyitott állapot)
+<!-- Külső konténer: a sidebar szélességét dinamikusan állítja 
+     (összecsukott / nyitott állapot)
      alapvető layout és stílusok -->
-<div [ngClass]="{'w-20': !isLeftNavOpen(), 'w-72': isLeftNavOpen()}"
+<div [ngClass]="{'w-20': true,
+                 'md:w-20': !isLeftNavOpen(),
+                 'md:w-72': isLeftNavOpen()
+                }"
      class="flex flex-col py-6 px-4 bg-gray-900 
             h-screen text-gray-200 relative duration-550">
 
@@ -15,8 +19,10 @@
     </fa-icon>
 
     <!-- Alkalmazás név: elrejtődik, ha a sidebar össze van csukva -->
-    <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
-          class="font-bold text-2xl duration-550">
+    <span [ngClass]="{'scale-0': true,
+                       'md:scale-0': !isLeftNavOpen(),
+                       'md:scale-100': isLeftNavOpen()}" 
+          class="font-bold text-2xl duration-550 origin-left">
       BookFlow
     </span>
   </div>
@@ -27,7 +33,8 @@
            size="lg"
            (click)="isLeftNavOpen.set(!isLeftNavOpen())"
            class="absolute text-gray-900 -right-4 top-8 h-8 w-8 bg-white flex items-center
-                  justify-center rounded-full border border-gray-900 cursor-pointer duration-550">
+                  justify-center rounded-full border border-gray-900 cursor-pointer duration-550
+                  hidden md:flex">
   </fa-icon>
 
   <!-- Elválasztó vonal: vizuális szétválasztás a logó és a menüpontok között -->
@@ -35,39 +42,47 @@
 
   <!-- Navigációs elemek konténere: felső rész, menüpontok listája függőlegesen -->
   <div class="nav-items flex flex-col gap-y-4 mt-4">
-    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön, kattintás navigációt hív -->
+    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön,
+         kattintás navigációt hív -->
     <div *ngFor="let item of navItems; index as i" 
          class="nav-item gap-x-2 p-3 flex items-center 
-                rounded-lg hover:bg-light-white cursor-pointer"
+                rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
          (click)="activeRoute(item, i)" 
-         [ngClass]="{'bg-light-white': item.isActive}">
+         [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : item.isActive}">
       <!-- Menüpont ikon: FontAwesome ikon az adott item-hez -->
       <fa-icon [icon]="item.icon" size="lg"></fa-icon>
 
       <!-- Menüpont címke: elrejtődik összecsukott sidebar esetén -->
-      <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
-            class="text-base font-medium duration-550">
+      <span [ngClass]="{'scale-0': true,
+                       'md:scale-0': !isLeftNavOpen(),
+                       'md:scale-100': isLeftNavOpen()
+                      }"
+            class="text-base font-medium duration-550 origin-left">
         {{item.label}}
       </span>
     </div>
   </div>
 
-  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés gomb/elem, mindig lent helyezkedik el -->
+  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés 
+       gomb/elem, mindig lent helyezkedik el -->
   <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
     <!-- Alsó elválasztó: vizuális szétválasztás -->
     <hr class="my-2 text-gray-600">
 
-    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál, szintén elrejthető címkével -->
+    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál,
+         szintén elrejthető címkével -->
     <div class="nav-item mt-auto gap-x-2 p-3 flex items-center
-                rounded-lg hover:bg-light-white cursor-pointer"
+                rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
          (click)="activeRoute(login, 4)" 
-         [ngClass]="{'bg-light-white' : login.isActive}">
+         [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : login.isActive}">
       <!-- Ikon a bejelentkezéshez -->
       <fa-icon [icon]="icon.faArrowRightToBracket" size="lg"></fa-icon>
 
       <!-- Bejelentkezés szöveg: elrejthető, ha a sidebar össze van húzva -->
-      <span [ngClass]="{'scale-0': !isLeftNavOpen()}" 
-            class="text-base font-medium duration-550">
+      <span [ngClass]="{'scale-0': true,
+                       'md:scale-0': !isLeftNavOpen(),
+                       'md:scale-100': isLeftNavOpen()}" 
+            class="text-base font-medium duration-550 origin-left">
         Bejelentkezés
       </span>
     </div>
