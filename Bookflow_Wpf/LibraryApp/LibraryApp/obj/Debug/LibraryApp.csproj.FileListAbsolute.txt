@@ -263,3 +263,4 @@ C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.Up2Date
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp.pdb
+C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe.config

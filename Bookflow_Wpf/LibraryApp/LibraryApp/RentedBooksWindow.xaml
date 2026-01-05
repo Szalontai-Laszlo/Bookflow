@@ -28,10 +28,10 @@
                    HorizontalAlignment="Center"
                    Margin="0 0 0 20"/>
         <!-- Könyvek listája -->
-        <DataGrid Name="dataGrid_bereltkonyvek" HorizontalAlignment="Center" Height="243" VerticalAlignment="Top" Width="640" Margin="0,49,0,0" Grid.RowSpan="2"/>
+        <DataGrid Name="dataGrid_bereltkonyvek" HorizontalAlignment="Center" Height="243" VerticalAlignment="Top" Width="640" Margin="0,39,0,0" Grid.RowSpan="2"/>
 
         <!-- Műveleti gombok -->
-        <Button Content="Törlés" Foreground="White" Background="#F44336" Margin="520,259,20,10" Grid.Row="1">
+        <Button Content="Törlés" Foreground="White" Background="#F44336" Margin="510,248,15,15" Grid.Row="1">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border CornerRadius="8" Background="{TemplateBinding Background}">

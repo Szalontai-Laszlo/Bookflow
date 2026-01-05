@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\",
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\toth_laszlo_gabor\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\custommessagebox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\custommessagebox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\editbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\editbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\custommessagebox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\custommessagebox.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\rentedbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\rentedbookswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,27 +34,52 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomMessageBox.xaml",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\CustomMessageBox.xaml",
-              "RelativeDocumentMoniker": "LibraryApp\\CustomMessageBox.xaml",
-              "ToolTip": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\CustomMessageBox.xaml",
-              "RelativeToolTip": "LibraryApp\\CustomMessageBox.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-15T10:49:00.409Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "RentedBooksWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
+              "RelativeDocumentMoniker": "LibraryApp\\RentedBooksWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\RentedBooksWindow.xaml",
+              "RelativeToolTip": "LibraryApp\\RentedBooksWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-05T12:55:12.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditBooksWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\EditBooksWindow.xaml",
+              "RelativeDocumentMoniker": "LibraryApp\\EditBooksWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\EditBooksWindow.xaml",
+              "RelativeToolTip": "LibraryApp\\EditBooksWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-05T12:54:51.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomMessageBox.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\CustomMessageBox.xaml",
+              "RelativeDocumentMoniker": "LibraryApp\\CustomMessageBox.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\CustomMessageBox.xaml",
+              "RelativeToolTip": "LibraryApp\\CustomMessageBox.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-15T10:49:00.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AddBookWindow.xaml",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\AddBookWindow.xaml",
-              "ToolTip": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
               "RelativeToolTip": "LibraryApp\\AddBookWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-12-15T10:35:39.039Z",
@@ -54,11 +87,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\MainWindow.xaml.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -66,13 +99,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\LoginWindow.xaml.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\toth_laszlo_gabor\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA6wC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T09:12:12.525Z"
             }
