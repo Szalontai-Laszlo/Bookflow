@@ -38,7 +38,7 @@ cd html/server
 node server.js
 ```
 
-- Miután megvagyunk a terminál létrehozza általában a 4200-as portszámon a Weboldalt.
+- Miután megvagyunk a terminál létrehozza a 4200-as portszámon a Weboldalt.
 
 - A Weboldalt el lehet érni terminálból az alábbi linkre kell CTRL + Bal Click segitségével.
 ```
