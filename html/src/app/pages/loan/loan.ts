@@ -26,6 +26,7 @@ export class Loan {
   modalMessage = signal<string>('');
   modalClass = signal<string>('');
 
+  // függvény, ami sikeres gomblenyomás esetén feldob egy modalt
   onRentSubmit() {
     this.modalMessage.set('Sikeres kölcsönzés');
     this.showModal.set(true);

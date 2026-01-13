@@ -9,7 +9,5 @@ import { Sidebar } from './components/sidebar/sidebar';
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('bookflow');
-}
+export class App {}
 

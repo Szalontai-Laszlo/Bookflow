@@ -13,6 +13,8 @@ import { map } from 'rxjs/operators';
   styleUrl: './home.css',
 })
 export class Home {
+
+  // változó, amibe eltároljuk az adatbázisból érkező könyveket
   latestBooks: Observable<any[]>;
 
   constructor(private router: Router) {
@@ -21,11 +23,13 @@ export class Home {
   
   private http = inject(HttpClient)
 
+  // adatok lekérése az adatbázisból
   fetchData() {
     return this.http.get<any[]>("http://localhost:3000/api/books").pipe(
       map(books => books.slice(-5))
     );
   }
+  // visszatér az utolsó könyv id-jával
   fetchlastUserId() {
     return this.http.get<any[]>("http://localhost:3000/api/books/last_book_id")
   }

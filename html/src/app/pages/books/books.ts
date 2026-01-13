@@ -19,12 +19,15 @@ type Book = {
 })
 export class Books {
 
+  // változó, amibe eltároljuk az adatbázisból érkező könyveket
   libraryBooks: Observable<any[]>;
 
   constructor(private router: Router) {
     this.libraryBooks = this.fetchData();
   }
 
+  // függvény, ami egy linkre van ráhúzva,
+  // megnyomás esetén átdob a kölcsönzés oldalra
   goToLoan(book: any) {
     this.router.navigate(['/loan'], 
     { queryParams: { title: book.title } });
@@ -34,15 +37,21 @@ export class Books {
   modalClass= signal<string>('');
   selectedBook: any = null;
 
+  // függvény, ami egy gombra van ráhúzva,
+  // megnyomás esetén feldob egy modalt animálva, 
+  // amin az adott könyv infói találhatóak
   openModal(book: any) {
     this.selectedBook = book;
     this.showModal.set(true);
     this.modalClass.set('fade-in-up');
   }
 
+  // függvény, ami egy gombra van ráhúzva,
+  // megnyomás esetén bezárja az adott modalt 500ms késleltetéssel, animálva
   closeModal() {
     this.modalClass.set('fade-out-down');
     
+    // 500ms késleltetés a modal bezárására
     setTimeout(() => {
       this.showModal.set(false);
       this.selectedBook = null;
