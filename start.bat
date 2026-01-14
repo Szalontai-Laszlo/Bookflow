@@ -1,4 +1,6 @@
 @echo off
+chcp 65001 >nul
+
 echo Angular és Express szerver indítása egy ablakban...
 
 REM --- Angular szerver indítása háttérben, sárga színnel ---
@@ -11,6 +13,8 @@ cd html\server
 start /b powershell -command "node server.js 2>&1 | ForEach-Object { Write-Host '[EXPRESS]: ' -ForegroundColor Green -NoNewline; Write-Host $_ }"
 cd ..\..
 
+
+timeout /t 5 /nobreak > nul
 echo.
 echo ================================
 echo Angular fut: http://localhost:4200

@@ -8,21 +8,20 @@ app.use(express.json());
 
 
 
-// api lekérdezések és feltöltés
-app.get("/api/users", async (req, res) => {
-  try {
-    const [rows] = await db.query("SELECT * FROM users");
-    res.json(rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error" });
-  }
-});
-
+// Könyvek lekérése
 app.get("/api/books", async (req, res) => {
   try {
     const [rows] = 
-    await db.query("SELECT `books`.`id`,`books`.`title`,`authors`.`name` AS `authors_name`,`books`.`img`,`books`.`description` FROM `books` INNER JOIN `authors` ON `books`.`author_id` = `authors`.`id`");
+    await db.query(`SELECT 
+                          books.id,
+                          books.title,
+                          authors.name AS authors_name,
+                          books.img,
+                          books.description 
+                    FROM books 
+                    INNER JOIN authors 
+                    ON books.author_id = authors.id`
+                  );
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -30,6 +29,7 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
+//Utolsó létrehozott könyv id lekérdezése
 app.get("/api/books/last_book_id", async (req, res) => {
   try {
     const [rows] = 
@@ -41,6 +41,8 @@ app.get("/api/books/last_book_id", async (req, res) => {
   }
 });
 
+
+// Szerzők lekérése
 app.get("/api/authors", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM authors");
@@ -51,13 +53,32 @@ app.get("/api/authors", async (req, res) => {
   }
 });
 
+// Login oldalhoz való lekérés
+app.get("/api/users/login", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT `email`,`password` FROM `users`");
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
 
-//itt tudsz ugy keresni táblában hogy csak az adott id-t kapod meg pl: kéri az oldal hogy mi a 20 as könyv és instant odaadja az egész sort :P
+//Felhasználók lekérése
+app.get("/api/users", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT * FROM users");
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+// id alapján lévő keresés
 app.get("/api/users/:id", async (req, res) => {
   res.params.id
 })
 
-// ide jön majd a build- kiszolgálás
-
 const PORT = 3000;
-app.listen(PORT, () => console.log("Express API running on port " + PORT));
+app.listen(PORT, () => console.log("A Backend szerver elindult a: " + PORT +"-on"));
