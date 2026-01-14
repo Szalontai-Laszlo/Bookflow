@@ -35,7 +35,7 @@
                   transition-all duration-300 hover:-translate-y-2 
                   animate-fade-in-up">
         <p class="text-gray-700 mb-1">Lefoglalt könyveink</p>
-        <h3 class="text-4xl font-bold text-blue-600">6</h3>
+        <h3 class="text-4xl font-bold text-blue-600">{{ reservedBooks }}</h3>
       </div>
 
       <!-- "kedvencek" kártya -->
@@ -44,7 +44,7 @@
                   transition-all duration-300 hover:-translate-y-2 
                   animate-fade-in-up">
         <p class="text-gray-700 mb-1">Összes könyveink</p>
-        <h3 class="text-4xl font-bold text-yellow-500">14</h3>
+        <h3 class="text-4xl font-bold text-yellow-500">{{ allBooks }}</h3>
       </div>
 
     </div>
@@ -85,7 +85,7 @@
             Ismerd meg a legnépszerűbb írókat és műveiket.
           </p>
           <button class="px-4 py-2 bg-white/20 hover:bg-white/30 
-                         rounded-lg font-medium transition">
+                         rounded-lg font-medium transition cursor-pointer">
             Felfedezés →
           </button>
         </div>
@@ -95,12 +95,13 @@
                     p-8 rounded-2xl text-white shadow-xl hover:shadow-2xl 
                     transition-all hover:-translate-y-2 duration-300
                     animate-fade-in-up">
-          <h3 class="text-2xl font-bold mb-3">Olvasási statisztikák</h3>
+          <h3 class="text-2xl font-bold mb-3">Ismerj meg minket</h3>
           <p class="opacity-90 mb-4">
-            Tekintsd meg a személyes olvasási szokásaidat.
+            Kattits a gombra hogy megismerd az oldal készítőit!
           </p>
           <button class="px-4 py-2 bg-white/20 hover:bg-white/30 
-                         rounded-lg font-medium transition">
+                         rounded-lg font-medium transition cursor-pointer"
+                  (click)="goToAbout()">
             Részletek →
           </button>
         </div>

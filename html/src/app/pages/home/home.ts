@@ -19,16 +19,24 @@ export class Home {
 
   // változó, amibe eltároljuk az elérhető könyvek számát
   totalBooks = 0;
+  reservedBooks = 0;
+  allBooks = 0;
 
   constructor(private router: Router) {
     this.latestBooks = this.fetchData();
     this.fetchTotalBooks();
+    this.fetchReservedBooks();
+    this.fetchAllBooks();
   }
   
   private http = inject(HttpClient)
 
   goToBooks() {
     this.router.navigate(['/books']);
+  }
+
+  goToAbout() {
+    this.router.navigate(['/about_us']);
   }
 
   // adatok lekérése az adatbázisból
@@ -48,6 +56,30 @@ export class Home {
 
         // ha gáz van az alap érték 0
         error: () => this.totalBooks = 0
+      });
+  }
+
+  fetchReservedBooks() {
+    this.http.get<{ count: number }>("http://localhost:3000/api/books/reserved_books")
+      .subscribe({
+
+        // ha megkapjuk az összes elérhető könyvek számát beállítjuk (feltéve ha nincs 0)
+        next: data => this.reservedBooks = typeof data?.count === 'number' ? data.count : 0,
+
+        // ha gáz van az alap érték 0
+        error: () => this.reservedBooks = 0
+      });
+  }
+
+  fetchAllBooks() {
+    this.http.get<{ count: number }>("http://localhost:3000/api/books/all_books")
+      .subscribe({
+
+        // ha megkapjuk az összes elérhető könyvek számát beállítjuk (feltéve ha nincs 0)
+        next: data => this.allBooks = typeof data?.count === 'number' ? data.count : 0,
+
+        // ha gáz van az alap érték 0
+        error: () => this.allBooks = 0
       });
   }
 }

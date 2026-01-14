@@ -41,6 +41,29 @@ app.get("/api/books/last_book_id", async (req, res) => {
   }
 });
 
+app.get("/api/books/reserved_books", async (req, res) => {
+  try {
+    const [rows] = 
+    await db.query("SELECT COUNT(id) as 'count' FROM `books` WHERE status = 0");
+    res.json({ count: rows[0]?.count ?? 0 });;
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+app.get("/api/books/all_books", async (req, res) => {
+  try {
+    const [rows] = 
+    await db.query("SELECT COUNT(id) as 'count' FROM `books`");
+    res.json({ count: rows[0]?.count ?? 0 });;
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+
 
 // Szerzők lekérése
 app.get("/api/authors", async (req, res) => {
