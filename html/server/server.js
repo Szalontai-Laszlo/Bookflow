@@ -29,7 +29,7 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
-//Utolsó létrehozott könyv id lekérdezése
+// Utolsó létrehozott könyv id lekérdezése
 app.get("/api/books/last_book_id", async (req, res) => {
   try {
     const [rows] = 
@@ -64,7 +64,7 @@ app.get("/api/users/login", async (req, res) => {
   }
 });
 
-//Felhasználók lekérése
+// Felhasználók lekérése
 app.get("/api/users", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM users");
