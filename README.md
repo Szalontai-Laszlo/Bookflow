@@ -3,7 +3,7 @@
 - Nyelv: Magyar, Angol, Spanyol, Német
 - Design: Tailwind
 - Keretrendszer: Angular
-- REST API Backend: PHP
+- REST API Backend: Express
 
 # Felhasználói Főoldal elinditása (Angular)
 ### 1.lépés
