@@ -48,7 +48,6 @@ https://localhost:4200/
 
 
 
-
 # Projekthez tartozó linkek
 - https://github.com/Szalontai-Laszlo/Bookflow
 - https://trello.com/b/PuFs3V01/bookflow
