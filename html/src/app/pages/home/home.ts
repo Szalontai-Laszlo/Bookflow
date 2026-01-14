@@ -27,6 +27,10 @@ export class Home {
   
   private http = inject(HttpClient)
 
+  goToBooks() {
+    this.router.navigate(['/books']);
+  }
+
   // adatok lekérése az adatbázisból
   fetchData() {
     return this.http.get<any[]>("http://localhost:3000/api/books").pipe(
