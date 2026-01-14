@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Dec 16. 12:41
+-- Létrehozás ideje: 2026. Jan 14. 10:30
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -58,22 +58,23 @@ CREATE TABLE `books` (
   `category_id` int(11) NOT NULL,
   `status` tinyint(2) NOT NULL,
   `img` varchar(50) NOT NULL,
-  `description` varchar(500) NOT NULL
+  `description` varchar(500) NOT NULL,
+  `available` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `books`
 --
 
-INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`, `img`, `description`) VALUES
-(1, 'Harry Potter and the Philosophers Stone', 1, 1, 1, 'assets/books/harrypotterphilosophersstone.png', 'Egy hétköznapi fiúról szól, aki megtudja, hogy különleges helye van egy rejtett, varázslatos világban. A történet egy különleges iskolában bontakozik ki, ahol barátságok, próbák és titkok várnak rá. Könnyen befogadható, mégis egyre sötétebbé váló fantasy-univerzum nyitánya.'),
-(2, '1984', 2, 4, 1, 'assets/books/1984.png', 'Egy nyomasztó, totalitárius jövőben játszódó regény, ahol az állam mindent lát, mindent ellenőriz, még a gondolatokat is. A könyv az egyén és a hatalom viszonyát, az igazság manipulálását és a szabadság jelentését vizsgálja.'),
-(3, 'The Hobbit', 3, 1, 0, 'assets/books/thehobbit.png', 'Egy békés, otthonülő hős váratlan kalandba keveredik, amely során ismeretlen tájakon, furcsa lények között kell helytállnia. A regény humoros, mesés hangvételű, és egy nagyobb fantasy világ kapuját nyitja meg.'),
-(4, 'Murder on the Orient Express', 4, 3, 1, 'assets/books/murdertheorientexpress.png', 'Egy elegáns vonatút során bűntény történik, és a híres nyomozónak zárt környezetben kell feltárnia az igazságot. A regény a klasszikus krimi mintapéldája, tele éles párbeszédekkel és logikai fordulatokkal.'),
-(5, 'Düne - A próféta', 5, 3, 1, 'assets/books/duneaprofeta.png', 'A Dűne folytatása egy olyan világba vezet vissza, ahol a hatalom, a vallás és a politika szorosan összefonódik. A történet mélyebb, filozofikusabb hangvételű, és a hősi szerep súlyát, valamint annak következményeit vizsgálja.'),
-(6, 'A király visszatér', 3, 4, 1, 'assets/books/akiralyvisszater.png', 'Egy hatalmas utazás végső szakasza, ahol a szereplők sorsa és a világ jövője eldől. A regény epikus léptékű, érzelmekkel és csatákkal teli lezárása egy klasszikus fantasy történetnek.'),
-(7, 'Alapitvány és Föld', 6, 4, 1, 'assets/books/alapitvanyesfold.png', 'Egy hosszú tudományos-fantasztikus sagát lezáró kötet, amely az emberiség eredetét és jövőjét kutatja. A hangsúly a gondolkodáson, a tudáson és a civilizációk közti kapcsolatokon van.'),
-(8, 'Hyperion', 7, 2, 1, 'assets/books/hyperion.png', 'Egy titokzatos bolygóra tartó utazás története, amely során több szereplő meséli el saját múltját. A regény különleges szerkezetű, filozofikus és irodalmilag gazdag sci-fi, amely nagy kérdéseket tesz fel időről, hitről és emberi sorsról.');
+INSERT INTO `books` (`id`, `title`, `author_id`, `category_id`, `status`, `img`, `description`, `available`) VALUES
+(1, 'Harry Potter and the Philosophers Stone', 1, 1, 1, 'assets/books/harrypotterphilosophersstone.png', 'Egy hétköznapi fiúról szól, aki megtudja, hogy különleges helye van egy rejtett, varázslatos világban. A történet egy különleges iskolában bontakozik ki, ahol barátságok, próbák és titkok várnak rá. Könnyen befogadható, mégis egyre sötétebbé váló fantasy-univerzum nyitánya.', 1),
+(2, '1984', 2, 4, 1, 'assets/books/1984.png', 'Egy nyomasztó, totalitárius jövőben játszódó regény, ahol az állam mindent lát, mindent ellenőriz, még a gondolatokat is. A könyv az egyén és a hatalom viszonyát, az igazság manipulálását és a szabadság jelentését vizsgálja.', 1),
+(3, 'The Hobbit', 3, 1, 0, 'assets/books/thehobbit.png', 'Egy békés, otthonülő hős váratlan kalandba keveredik, amely során ismeretlen tájakon, furcsa lények között kell helytállnia. A regény humoros, mesés hangvételű, és egy nagyobb fantasy világ kapuját nyitja meg.', 0),
+(4, 'Murder on the Orient Express', 4, 3, 1, 'assets/books/murdertheorientexpress.png', 'Egy elegáns vonatút során bűntény történik, és a híres nyomozónak zárt környezetben kell feltárnia az igazságot. A regény a klasszikus krimi mintapéldája, tele éles párbeszédekkel és logikai fordulatokkal.', 1),
+(5, 'Düne - A próféta', 5, 3, 1, 'assets/books/duneaprofeta.png', 'A Dűne folytatása egy olyan világba vezet vissza, ahol a hatalom, a vallás és a politika szorosan összefonódik. A történet mélyebb, filozofikusabb hangvételű, és a hősi szerep súlyát, valamint annak következményeit vizsgálja.', 1),
+(6, 'A király visszatér', 3, 4, 1, 'assets/books/akiralyvisszater.png', 'Egy hatalmas utazás végső szakasza, ahol a szereplők sorsa és a világ jövője eldől. A regény epikus léptékű, érzelmekkel és csatákkal teli lezárása egy klasszikus fantasy történetnek.', 1),
+(7, 'Alapitvány és Föld', 6, 4, 1, 'assets/books/alapitvanyesfold.png', 'Egy hosszú tudományos-fantasztikus sagát lezáró kötet, amely az emberiség eredetét és jövőjét kutatja. A hangsúly a gondolkodáson, a tudáson és a civilizációk közti kapcsolatokon van.', 1),
+(8, 'Hyperion', 7, 2, 1, 'assets/books/hyperion.png', 'Egy titokzatos bolygóra tartó utazás története, amely során több szereplő meséli el saját múltját. A regény különleges szerkezetű, filozofikus és irodalmilag gazdag sci-fi, amely nagy kérdéseket tesz fel időről, hitről és emberi sorsról.', 1);
 
 -- --------------------------------------------------------
 
@@ -137,9 +138,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`, `type`) VALUES
-(1, 'Kiss Anna', 'anna.kiss@example.com', '12345', 'F', 'U'),
-(2, 'Nagy Péter', 'peter.nagy@example.com', '12345', 'M', 'U'),
-(3, 'Tóth Lilla', 'lilla.toth@example.com', '12345', 'F', 'U'),
+(1, 'Kiss Anna', 'anna.kiss@example.com', '12345Aa', 'F', 'U'),
+(2, 'Nagy Péter', 'peter.nagy@example.com', '12345Aa', 'M', 'U'),
+(3, 'Tóth Lilla', 'lilla.toth@example.com', '12345Aa', 'F', 'U'),
 (4, 'Tóth László Gábor', 'toth.laszlo-2021@keri.mako.hu', '1234Aa', 'M', 'A'),
 (5, 'Szalontai László', 'szalontai.laszlo-2021@keri.mako.hu', '1234Aa', 'M', 'A');
 
