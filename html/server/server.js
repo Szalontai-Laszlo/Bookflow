@@ -33,8 +33,8 @@ app.get("/api/books", async (req, res) => {
 app.get("/api/books/last_book_id", async (req, res) => {
   try {
     const [rows] = 
-    await db.query("SELECT COUNT(id) AS 'Összes Könyv' FROM `books` WHERE available = 1");
-    res.json({ books: rows[0].id });;
+    await db.query("SELECT COUNT(id) AS 'count' FROM `books` WHERE status = 1");
+    res.json({ count: rows[0]?.count ?? 0 });;
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Database error" });
