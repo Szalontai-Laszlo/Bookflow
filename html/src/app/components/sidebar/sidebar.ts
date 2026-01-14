@@ -24,6 +24,7 @@ interface SidebarItem
 })
 export class Sidebar {
 
+  // a sidebarban használt iconok tömbje
   icon = {
     faBook,faBookOpen,faHome,faBookmark,
     faUsers,faArrowLeft,faArrowRightToBracket
@@ -31,6 +32,10 @@ export class Sidebar {
 
   isLeftNavOpen = signal<boolean>(true);
   constructor(private router: Router) {}
+  
+  // navItems tömb, amibe különféle objektumok vannak, 
+  // innen vannak kivéve a sidebar navigációs részéhez kellő iconok,
+  // nevek és route-ok
   navItems: SidebarItem[] = [
     {
       icon: this.icon.faHome,
@@ -61,6 +66,7 @@ export class Sidebar {
     },
   ];
 
+  // ez egy külön login objektum ami a login iconját, nevét és routeját tartalmazza
   login: SidebarItem = {
     icon: this.icon.faArrowRightToBracket,
     label: 'Bejelentkezés',
@@ -68,14 +74,19 @@ export class Sidebar {
     isActive: false
   };
 
+  // amikor kiválasztjuk a menüelemet, 
+  // frissülnek az isActive mezők és átnavigál a kiválaszott oldalra
   activeRoute(item: SidebarItem, index: number): void { 
 
+    // navItemsen végigmegy, és az indexhez tartozót jelöli aktívnak
     this.navItems.forEach((navItem, i) => { 
       navItem.isActive = i === index; 
     }); 
 
+    // hogyha a login objektum van kiválasztva, akkor az legyen aktiválva
     this.login.isActive = item === this.login; 
 
+    // átnavigál az oldalra
     this.router.navigateByUrl(item.route); 
   }
 }

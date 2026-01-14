@@ -1,6 +1,5 @@
-<!-- Külső konténer: a sidebar szélességét dinamikusan állítja 
-     (összecsukott / nyitott állapot)
-     alapvető layout és stílusok -->
+<!-- fő konténer, háttérszín és navigáció
+     szélességét változtatja, ha a gombra rányomunk -->
 <div [ngClass]="{'w-20': true,
                  'md:w-20': !isLeftNavOpen(),
                  'md:w-72': isLeftNavOpen()
@@ -8,9 +7,10 @@
      class="flex flex-col py-6 px-4 bg-gray-900 
             h-screen text-gray-200 relative duration-550">
 
-  <!-- Logo sor: ikon + alkalmazás neve, belső igazítás és margó -->
+  <!-- Az oldal logoja -->
   <div class="logo h-[40px] flex items-center gap-x-2 mb-4">
-    <!-- Könyv ikon: vizuális márkajelzés, rotálható a sidebar állapota szerint -->
+
+    <!-- Könyv ikon -->
     <fa-icon [ngClass]="{'rotate-[360deg]': !isLeftNavOpen()}" 
              [icon]="icon.faBook" 
              size="xl"
@@ -18,7 +18,7 @@
                     p-2 rounded-lg duration-550">
     </fa-icon>
 
-    <!-- Alkalmazás név: elrejtődik, ha a sidebar össze van csukva -->
+    <!-- Oldal neve -->
     <span [ngClass]="{'scale-0': true,
                        'md:scale-0': !isLeftNavOpen(),
                        'md:scale-100': isLeftNavOpen()}" 
@@ -27,7 +27,7 @@
     </span>
   </div>
 
-  <!-- Toggle ikon: a bal oldali navigation összehúzását/kinyitását vezérli -->
+  <!-- ez a gomb vezérli a sidebar szélességét (összecsukott/kinyitott állapot) -->
   <fa-icon [ngClass]="{'rotate-180': !isLeftNavOpen()}"
            [icon]="icon.faArrowLeft" 
            size="lg"
@@ -37,22 +37,21 @@
                   hidden md:flex">
   </fa-icon>
 
-  <!-- Elválasztó vonal: vizuális szétválasztás a logó és a menüpontok között -->
+  <!-- egy szimpla elválasztó vonal -->
   <hr class="my-2 text-gray-600">
 
-  <!-- Navigációs elemek konténere: felső rész, menüpontok listája függőlegesen -->
+  <!-- ebben a konténerben vannak a navigációs részek -->
   <div class="nav-items flex flex-col gap-y-4 mt-4">
-    <!-- Egy menüpont sablon: ngFor iterál navItems tömbön,
-         kattintás navigációt hív -->
+
+    <!-- ngForral létrehozzuk a navigációs menüpontokat,
+         amit a navItemsből szedünk ki iconnal és névvel együtt
+         a név összecsukott állapotba nem jelenik meg -->
     <div *ngFor="let item of navItems; index as i" 
          class="nav-item gap-x-2 p-3 flex items-center 
                 rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
          (click)="activeRoute(item, i)" 
          [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : item.isActive}">
-      <!-- Menüpont ikon: FontAwesome ikon az adott item-hez -->
       <fa-icon [icon]="item.icon" size="lg"></fa-icon>
-
-      <!-- Menüpont címke: elrejtődik összecsukott sidebar esetén -->
       <span [ngClass]="{'scale-0': true,
                        'md:scale-0': !isLeftNavOpen(),
                        'md:scale-100': isLeftNavOpen()
@@ -63,22 +62,19 @@
     </div>
   </div>
 
-  <!-- Alsó navigációs blokk: elválasztó és bejelentkezés 
-       gomb/elem, mindig lent helyezkedik el -->
+  <!-- bejelentkezés részleg -->
   <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
-    <!-- Alsó elválasztó: vizuális szétválasztás -->
+
+    <!-- szintén egy elválasztó vonal -->
     <hr class="my-2 text-gray-600">
 
-    <!-- Bejelentkezés menüpont: kattintva a login objektumhoz navigál,
-         szintén elrejthető címkével -->
+    <!-- loginra navigáló div iconnal és névvel együtt
+         a név szintén nem jelenik meg összecsukott állapotba  -->
     <div class="nav-item mt-auto gap-x-2 p-3 flex items-center
                 rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
          (click)="activeRoute(login, 4)" 
          [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : login.isActive}">
-      <!-- Ikon a bejelentkezéshez -->
       <fa-icon [icon]="icon.faArrowRightToBracket" size="lg"></fa-icon>
-
-      <!-- Bejelentkezés szöveg: elrejthető, ha a sidebar össze van húzva -->
       <span [ngClass]="{'scale-0': true,
                        'md:scale-0': !isLeftNavOpen(),
                        'md:scale-100': isLeftNavOpen()}" 
