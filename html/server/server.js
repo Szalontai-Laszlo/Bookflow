@@ -99,6 +99,23 @@ app.get("/api/users", async (req, res) => {
     res.status(500).json({ error: "Database error" });
   }
 });
+// Kölcsönzés oldalhoz szükséges lekérés
+app.get("/api/books/loan_books", async (req, res) => {
+  try {
+    const [rows] = await db.query(`SELECT 
+                                      books.title AS 'title',
+		                                  authors.name AS 'author'
+                                    FROM books 
+                                    INNER JOIN authors 
+                                    ON authors.id = books.author_id
+                                    WHERE books.status = 1`
+                                  );
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
 
 // id alapján lévő keresés
 app.get("/api/users/:id", async (req, res) => {

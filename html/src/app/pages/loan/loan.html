@@ -46,7 +46,7 @@
           <select class="w-full px-4 py-2 rounded-lg border 
                          border-gray-300 focus:ring-2 focus:ring-blue-500"
                   id="loan-book_name">
-            <option *ngFor="let book of libraryBooks; index as i">
+            <option *ngFor="let book of libraryBooks | async; index as i">
               {{ book.title }} - {{ book.author }}
             </option>
           </select>

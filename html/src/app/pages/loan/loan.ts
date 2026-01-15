@@ -1,6 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { CommonModule, } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-loan',
@@ -9,19 +12,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './loan.css',
 })
 export class Loan {
-  libraryBooks = [
-    { title: 'Dűne – A próféta', author: 'Frank Herbert' },
-    { title: 'A király visszatér', author: 'J. R. R. Tolkien'},
-    { title: 'Alapítvány és Föld', author: 'Isaac Asimov'},
-    { title: 'Hyperion', author: 'Dan Simmons'},
-    { title: '1984', author: 'George Orwell'},
-    { title: 'A Gyűrűk Ura', author: 'J. R. R. Tolkien'},
-    { title: 'Szél Neve', author: 'Patrick Rothfuss'},
-    { title: 'Hobbit', author: 'J. R. R. Tolkien'},
-    { title: 'Murder On The Orient Express', author: 'Agatha Christie'},
-    { title: 'Harry Potter: Bölcsek köve', author: 'J.K. Rowling'}
-  ];
+  libraryBooks: Observable<any[]>;
 
+  constructor(private router: Router) {
+      this.libraryBooks = this.fetchData();
+  }
   showModal = signal<boolean>(false);
   modalMessage = signal<string>('');
   modalClass = signal<string>('');
@@ -42,5 +37,9 @@ export class Loan {
       this.showModal.set(false);
       this.modalMessage.set('');
     }, 3000);
+  }
+  private http = inject(HttpClient)
+  fetchData() {
+    return this.http.get<any[]>("http://localhost:3000/api/books/loan_books");
   }
 }
