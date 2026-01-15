@@ -41,6 +41,7 @@ app.get("/api/books/last_book_id", async (req, res) => {
   }
 });
 
+// Kibérelt könyvek számának lekérése
 app.get("/api/books/reserved_books", async (req, res) => {
   try {
     const [rows] = 
@@ -52,6 +53,7 @@ app.get("/api/books/reserved_books", async (req, res) => {
   }
 });
 
+// Összes könyv számának lekérése
 app.get("/api/books/all_books", async (req, res) => {
   try {
     const [rows] = 
