@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 15. 11:32
+-- Létrehozás ideje: 2026. Jan 15. 11:37
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -39,13 +39,13 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `image`, `description`) VALUES
-(1, 'J. K. Rowling', 'assets/books/authors/jkrowling.png', 'A Harry Potter‑sorozat szerzője, amely világszerte kulturális jelenséggé vált. Műveiben gyakran keveri a klasszikus fantasy elemeket modern társadalmi kérdésekkel. Írásai erős érzelmi ívet és karakterfejlődést mutatnak. A sorozat sikere után több felnőtteknek szóló regényt is publikált.'),
-(2, 'George Orwell', 'assets/books/authors/georgeorwel.png', 'Angol író és esszéista, legismertebb művei az Állatfarm és az 1984. Munkásságát áthatja a totalitarizmus kritikája és a társadalmi igazságtalanságok elleni kiállás. Stílusa letisztult, éleslátó és gyakran nyers. Gondolatai ma is meglepően aktuálisak.'),
-(3, 'J. R. R. Tolkien', 'assets/books/authors/jrrtolkien.png', 'A modern fantasy atyjaként tartják számon, fő műve A Gyűrűk Ura és a Hobbit. Nyelvész volt, ami erősen megjelenik a világépítésben és a mitológiateremtésben. Legendáriuma rendkívül részletes és összetett, saját nyelvekkel, történelmekkel és kultúrákkal. Hatása a műfajra felbecsülhetetlen.'),
-(4, 'Agatha Christie', 'assets/books/authors/agathachristie.png', 'A krimi műfaj királynője, olyan ikonikus detektíveket alkotott, mint Hercule Poirot és Miss Marple. Regényei a logikai rejtvényekre és a meglepő fordulatokra épülnek. Több mint 2 milliárd eladott példánnyal a világ egyik legolvasottabb szerzője. Művei máig népszerűek színházban és filmvásznon is.'),
-(5, 'Frank Herbert', 'assets/books/authors/frankherbert.png', 'A Dűne szerzője, amely a sci-fi egyik legnagyobb hatású regénye. Műveiben gyakran foglalkozik ökológiai, politikai és vallási témákkal. Világépítése rendkívül részletes és filozofikus. A Dűne univerzumot később fia, Brian Herbert is tovább bővítette.'),
-(6, 'Isaac Asimov', 'assets/books/authors/isaacasimov.png', 'A sci-fi aranykorának egyik legtermékenyebb írója, több száz könyvvel és esszével. Leghíresebb művei az Alapítvány-sorozat és a robotika három törvénye. Írásai tudományos igényességgel és logikus világépítéssel tűnnek ki. Emellett kiváló ismeretterjesztő is volt.'),
-(7, 'Dab Simmons', 'assets/books/authors/dabsimmons.png', 'Ez a név nem tartozik a széles körben ismert írók közé. Létezik egy Dab (vagy Deb) Simmons nevű szerző, aki film- és színháztörténettel foglalkozik, de nem klasszikus szépirodalmi alkotó. Ha pontosítod, melyik Simmonsra gondoltál, szívesen írok róla részletesebben.'),
+(1, 'J. K. Rowling', 'assets/authors/jkrowling.png', 'A Harry Potter‑sorozat szerzője, amely világszerte kulturális jelenséggé vált. Műveiben gyakran keveri a klasszikus fantasy elemeket modern társadalmi kérdésekkel. Írásai erős érzelmi ívet és karakterfejlődést mutatnak. A sorozat sikere után több felnőtteknek szóló regényt is publikált.'),
+(2, 'George Orwell', 'assets/authors/georgeorwel.png', 'Angol író és esszéista, legismertebb művei az Állatfarm és az 1984. Munkásságát áthatja a totalitarizmus kritikája és a társadalmi igazságtalanságok elleni kiállás. Stílusa letisztult, éleslátó és gyakran nyers. Gondolatai ma is meglepően aktuálisak.'),
+(3, 'J. R. R. Tolkien', 'assets/authors/jrrtolkien.png', 'A modern fantasy atyjaként tartják számon, fő műve A Gyűrűk Ura és a Hobbit. Nyelvész volt, ami erősen megjelenik a világépítésben és a mitológiateremtésben. Legendáriuma rendkívül részletes és összetett, saját nyelvekkel, történelmekkel és kultúrákkal. Hatása a műfajra felbecsülhetetlen.'),
+(4, 'Agatha Christie', 'assets/authors/agathachristie.png', 'A krimi műfaj királynője, olyan ikonikus detektíveket alkotott, mint Hercule Poirot és Miss Marple. Regényei a logikai rejtvényekre és a meglepő fordulatokra épülnek. Több mint 2 milliárd eladott példánnyal a világ egyik legolvasottabb szerzője. Művei máig népszerűek színházban és filmvásznon is.'),
+(5, 'Frank Herbert', 'assets/authors/frankherbert.png', 'A Dűne szerzője, amely a sci-fi egyik legnagyobb hatású regénye. Műveiben gyakran foglalkozik ökológiai, politikai és vallási témákkal. Világépítése rendkívül részletes és filozofikus. A Dűne univerzumot később fia, Brian Herbert is tovább bővítette.'),
+(6, 'Isaac Asimov', 'assets/authors/isaacasimov.png', 'A sci-fi aranykorának egyik legtermékenyebb írója, több száz könyvvel és esszével. Leghíresebb művei az Alapítvány-sorozat és a robotika három törvénye. Írásai tudományos igényességgel és logikus világépítéssel tűnnek ki. Emellett kiváló ismeretterjesztő is volt.'),
+(7, 'Dab Simmons', 'assets/authors/dabsimmons.png', 'Ez a név nem tartozik a széles körben ismert írók közé. Létezik egy Dab (vagy Deb) Simmons nevű szerző, aki film- és színháztörténettel foglalkozik, de nem klasszikus szépirodalmi alkotó. Ha pontosítod, melyik Simmonsra gondoltál, szívesen írok róla részletesebben.'),
 (9, 'Lackfi János', '', 'Lackfi János József Attila-díjas magyar költő, író és műfordító, aki 1971-ben született Budapesten. Sokoldalú alkotóként verseket, prózát és gyerekirodalmat egyaránt ír, emellett jelentős műfordítói tevékenységet is folytat, főként francia nyelvből. Több mint harminc könyve jelent meg, és jellegzetes humoráról, játékos nyelvhasználatáról ismert. Tanárként és szerkesztőként is dolgozott, munkásságát számos rangos díjjal ismerték el');
 
 -- --------------------------------------------------------

@@ -27,7 +27,7 @@
                  transition-all duration-300 cursor-pointer flex flex-col 
                  animate-fade-in-up">
 
-        <img [src]="author.image || 'assets/books/authors/notimage.png'" 
+        <img [src]="author.image || 'assets/authors/notimage.png'" 
              (error)="onImgError($event)"
              class="h-48 w-full object-cover">
 
@@ -67,7 +67,7 @@
       </button>
     </div>
     <p class="text-gray-700 mb-4">Ismertető: {{selectedAuthor?.description}}</p>
-    <img [src]="selectedAuthor?.image || 'assets/books/authors/notimage.png'"
+    <img [src]="selectedAuthor?.image || 'assets/authors/notimage.png'"
          (error)="onImgError($event)" 
          class="w-full object-cover rounded mb-4">
          
