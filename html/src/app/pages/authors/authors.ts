@@ -30,6 +30,13 @@ export class Authors {
   modalClass= signal<string>('');
   selectedAuthor: any = null;
 
+  // egyszerű kép-hiba kezelő.
+  // ha nincs kép az adatbázisban, feltölti a notimage.png-vel
+  onImgError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.src = 'assets/books/authors/notimage.png';
+  }
+
   // függvény, ami egy gombra van ráhúzva,
   // megnyomás esetén feldob egy modalt animálva, 
   // amin az adott könyv infói találhatóak
