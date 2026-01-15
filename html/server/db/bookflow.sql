@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 14. 10:30
+-- Létrehozás ideje: 2026. Jan 15. 07:47
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -29,21 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `authors` (
   `id` int(11) NOT NULL,
-  `name` varchar(150) NOT NULL
+  `name` varchar(150) NOT NULL,
+  `image` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `authors`
 --
 
-INSERT INTO `authors` (`id`, `name`) VALUES
-(1, 'J. K. Rowling'),
-(2, 'George Orwell'),
-(3, 'J. R. R. Tolkien'),
-(4, 'Agatha Christie'),
-(5, 'Frank Herbert'),
-(6, 'Isaac Asimov'),
-(7, 'Dab Simmons');
+INSERT INTO `authors` (`id`, `name`, `image`) VALUES
+(1, 'J. K. Rowling', 'assets/books/authors/jkrowling.png'),
+(2, 'George Orwell', 'assets/books/authors/georgeorwel.png'),
+(3, 'J. R. R. Tolkien', 'assets/books/authors/jrrtolkien.png'),
+(4, 'Agatha Christie', 'assets/books/authors/agathachristie.png'),
+(5, 'Frank Herbert', 'assets/books/authors/frankherbert.png'),
+(6, 'Isaac Asimov', 'assets/books/authors/isaacasimov.png'),
+(7, 'Dab Simmons', 'assets/books/authors/dabsimmons.png');
 
 -- --------------------------------------------------------
 
