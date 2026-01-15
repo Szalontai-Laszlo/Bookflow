@@ -31,12 +31,19 @@ export class Home {
   
   private http = inject(HttpClient)
 
+  // függvény, ami megnyomáskor átdob a Könyvek oldalra
   goToBooks() {
     this.router.navigate(['/books']);
   }
 
+  // függvény, ami megnyomáskor átdob a Rólunk oldalra
   goToAbout() {
     this.router.navigate(['/about_us']);
+  }
+
+  // függvény, ami megnyomáskor átdob a Szerzők oldalra
+  goToAuthors() {
+    this.router.navigate(['/authors']);
   }
 
   // adatok lekérése az adatbázisból

@@ -3,7 +3,7 @@ import { Component, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
   faBook,faBookOpen,faHome,faBookmark,
-  faUsers,faArrowLeft,faArrowRightToBracket, 
+  faUsers,faArrowLeft,faArrowRightToBracket, faPen,
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
@@ -27,7 +27,8 @@ export class Sidebar {
   // a sidebarban használt iconok tömbje
   icon = {
     faBook,faBookOpen,faHome,faBookmark,
-    faUsers,faArrowLeft,faArrowRightToBracket
+    faUsers,faArrowLeft,faArrowRightToBracket,
+    faPen
   }
 
   isLeftNavOpen = signal<boolean>(true);
@@ -48,6 +49,13 @@ export class Sidebar {
       icon: this.icon.faBookOpen,
       label: 'Könyvtár',
       route: '/books',
+      isActive: false
+    },
+
+    {
+      icon: this.icon.faPen,
+      label: 'Szerzők',
+      route: '/authors',
       isActive: false
     },
 

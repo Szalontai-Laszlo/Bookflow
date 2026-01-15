@@ -4,38 +4,37 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+type Book = {
+  title : string;
+  author: string;
+  img   : string;
+}
+
 @Component({
   selector: 'app-books',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './books.html',
-  styleUrls: ['./books.css']  
+  templateUrl: './authors.html',
+  styleUrls: ['./authors.css']  
 })
-export class Books {
+export class Authors {
 
   // változó, amibe eltároljuk az adatbázisból érkező könyveket
-  libraryBooks: Observable<any[]>;
+  authors: Observable<any[]>;
 
   constructor(private router: Router) {
-    this.libraryBooks = this.fetchData();
-  }
-
-  // függvény, ami egy linkre van ráhúzva,
-  // megnyomás esetén átdob a kölcsönzés oldalra
-  goToLoan(book: any) {
-    this.router.navigate(['/loan'], 
-    { queryParams: { title: book.title } });
+    this.authors = this.fetchData();
   }
 
   showModal = signal<boolean>(false);
   modalClass= signal<string>('');
-  selectedBook: any = null;
+  selectedAuthor: any = null;
 
   // függvény, ami egy gombra van ráhúzva,
   // megnyomás esetén feldob egy modalt animálva, 
   // amin az adott könyv infói találhatóak
-  openModal(book: any) {
-    this.selectedBook = book;
+  openModal(author: any) {
+    this.selectedAuthor = author;
     this.showModal.set(true);
     this.modalClass.set('fade-in-up');
   }
@@ -48,12 +47,12 @@ export class Books {
     // 500ms késleltetés a modal bezárására
     setTimeout(() => {
       this.showModal.set(false);
-      this.selectedBook = null;
+      this.selectedAuthor = null;
       this.modalClass.set(''); 
     }, 500);
   }
   private http = inject(HttpClient)
   fetchData() {
-    return this.http.get<any[]>("http://localhost:3000/api/books");
+    return this.http.get<any[]>("http://localhost:3000/api/authors");
   }
 }

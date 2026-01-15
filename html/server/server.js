@@ -70,7 +70,7 @@ app.get("/api/books/all_books", async (req, res) => {
 // Szerzők lekérése
 app.get("/api/authors", async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT * FROM authors");
+    const [rows] = await db.query("SELECT `name`, `image`, `description` FROM authors");
     res.json(rows);
   } catch (err) {
     console.error(err);
