@@ -67,7 +67,7 @@
       </button>
     </div>
     <p class="text-gray-700 mb-4">Ismertető: {{selectedAuthor?.description}}</p>
-    <img [src]="selectedAuthor?.image || 'assets/authors/notimage.png'"
+    <img [src]="selectedAuthor?.image || 'authors/notimage.png'"
          (error)="onImgError($event)" 
          class="w-full object-cover rounded mb-4">
          

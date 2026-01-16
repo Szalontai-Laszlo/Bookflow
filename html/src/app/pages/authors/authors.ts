@@ -34,7 +34,7 @@ export class Authors {
   // ha nincs kép az adatbázisban, feltölti a notimage.png-vel
   onImgError(event: Event) {
     const img = event.target as HTMLImageElement;
-    img.src = 'assets/books/authors/notimage.png';
+    img.src = 'authors/notimage.png';
   }
 
   // függvény, ami egy gombra van ráhúzva,
