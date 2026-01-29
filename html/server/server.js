@@ -99,6 +99,29 @@ app.get("/api/users", async (req, res) => {
     res.status(500).json({ error: "Database error" });
   }
 });
+
+app.post("/api/login", async (req, res) => {
+  const {email, password} = req.body;
+  if(!email || !password){
+    return res.status(400).json({ message: "Hiányzó adatok" });
+  }
+  try {
+    const [rows] = await db.query(
+      "SELECT id, email, name FROM users WHERE email = ? AND password = ?",
+      [email, password]
+    );
+
+    res.json({
+      success: true,
+      user: rows[0]
+    });
+
+   
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Szerver hiba" });
+  }
+});
 // Kölcsönzés oldalhoz szükséges lekérés
 app.get("/api/books/loan_books", async (req, res) => {
   try {
@@ -123,4 +146,4 @@ app.get("/api/users/:id", async (req, res) => {
 })
 
 const PORT = 3000;
-app.listen(PORT, () => console.log("A Backend szerver elindult a: " + PORT +"-on"));
+app.listen(PORT, () => console.log("A Backend szerver elindult a: " + PORT +"res porton."));

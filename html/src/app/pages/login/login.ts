@@ -1,17 +1,27 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone : true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
+  email = '';
+  password = '';
+  error = signal("");
 
   // jelszó megjelenítés változó, aminek az alap értéke false
   showPassword = false;
-  constructor(private router: Router) {}
+  constructor(
+      private auth: AuthService,
+      private router: Router) 
+    {}
 
   // függvény, ami egy gombra van ráhúzva,
   // megnyomás esetén a showPassword értéke true lesz, és ez visszafele is működik
@@ -23,5 +33,16 @@ export class Login {
   // megnyomás esetén átdob a regisztrációs oldalra
   goToRegister() {
     this.router.navigate(['/register']);
+  }
+
+  login() {
+    this.auth.login(this.email, this.password).subscribe({
+        next: () => {
+          this.router.navigate(['/home']);
+        },
+        error: () => {
+          this.error.set('Hibás Email vagy Jelszó')
+        }
+    })
   }
 }

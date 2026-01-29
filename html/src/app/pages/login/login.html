@@ -8,7 +8,7 @@
                mb-6 text-center drop-shadow-md">
       Bejelentkezés
     </h1>
-    <form name="login-form" 
+    <form name="login-form" (ngSubmit)="login()" 
           class="space-y-5">
           
       <!-- email -->
@@ -20,6 +20,7 @@
         <input type="email"
                id="login-email"
                autocomplete="email"
+               [(ngModel)]="email"
                class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                       focus:ring-rose-500 focus:outline-none"
                placeholder="Add meg az email címed">
@@ -35,6 +36,7 @@
           <input [type]="showPassword ? 'text' : 'password'"
                  id="login-password"
                  autocomplete="current-password"
+                 [(ngModel)] = "password"
                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                         focus:ring-rose-500 focus:outline-none"
                  placeholder="Adj meg egy jelszót">
@@ -49,7 +51,7 @@
       </div>
 
       <!-- belépés gomb -->
-      <button type="button" 
+      <button type="submit" 
               class="w-full py-2 rounded-lg text-white font-medium 
                      bg-gradient-to-r from-rose-600 to-red-600 
                      hover:from-rose-700 hover:to-red-700 
