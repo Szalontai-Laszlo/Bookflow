@@ -6,7 +6,7 @@ import { AuthService } from 'src/services/auth';
 
 @Component({
   selector: 'app-login',
-  standalone : true,
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
@@ -38,7 +38,7 @@ export class Login {
   login() {
     this.auth.login(this.email, this.password).subscribe({
         next: () => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['']);
         },
         error: () => {
           this.error.set('Hibás Email vagy Jelszó')
