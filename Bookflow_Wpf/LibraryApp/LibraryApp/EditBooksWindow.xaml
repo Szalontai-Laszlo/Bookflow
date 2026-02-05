@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp"
         mc:Ignorable="d"
-        Title="EditBooksWindow" Height="450" Width="800">
+        Title="EditBooksWindow" Height="450" Width="800" WindowStyle="None">
     <!-- Világos szürke → sötétszürke átmenetes háttér -->
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -13,65 +13,86 @@
             <GradientStop Color="#2F2F2F" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
+
+    <!-- Use explicit rows so footer (buttons) is always visible -->
     <Grid>
-        <TextBlock Text="Bookflow Szerkesztői felület"
-           FontSize="25" FontWeight="Bold"
-           Foreground="Black"
-           VerticalAlignment="Top"
-           DockPanel.Dock="Left" RenderTransformOrigin="0.5,0.52" Margin="208,28,218,0" Height="43" />
-        <Label Content="Könyv Címe:" 
-               HorizontalAlignment="Left" 
-               Height="29" Margin="125,125,0,0" 
-               VerticalAlignment="Top" 
-               Width="78"/>
-        <Label Content="Könyv Szerzője:" 
-               HorizontalAlignment="Left" 
-               Height="37" 
-               Margin="116,171,0,0" 
-               VerticalAlignment="Top" 
-               Width="96"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Height="29" 
-                 Margin="208,125,0,0" 
-                 TextWrapping="Wrap" 
-                 Text="" 
-                 VerticalAlignment="Top" 
-                 Width="357"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Height="29" 
-                 Margin="208,174,0,0" 
-                 TextWrapping="Wrap" 
-                 Text="" 
-                 VerticalAlignment="Top" 
-                 Width="357"/>
-        <Label Content="Kibérelhető-e:" 
-               HorizontalAlignment="Left" 
-               Height="37" 
-               Margin="117,223,0,0" 
-               VerticalAlignment="Top" 
-               Width="90"/>
-        <ComboBox Name="comboBox_berles"
-                  HorizontalAlignment="Left" 
-                  Height="31" 
-                  Margin="207,223,0,0"
-                  VerticalAlignment="Top" 
-                  Width="358"/>
-        <Button Content="Szerkesztés" 
-                Height="32" 
-                Foreground="White" 
-                Margin="125,300,208,68">
-            <Button.Background>
-                <SolidColorBrush Color="#2196F3"/>
-            </Button.Background>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="8" 
-                            Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- header -->
+            <RowDefinition Height="*"/>    <!-- body -->
+            <RowDefinition Height="Auto"/> <!-- footer (buttons) -->
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Bookflow Szerkesztői felület"
+                   FontSize="25" FontWeight="Bold"
+                   Foreground="Black"
+                   VerticalAlignment="Top"
+                   Margin="208,28,218,0"
+                   Height="43" />
+
+        <!-- Body: labels and inputs -->
+        <Grid Grid.Row="1" Margin="80,20,80,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Könyv Címe:" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="txtTitle" Height="29" Margin="8,6,0,6" />
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Könyv Szerzője:" VerticalAlignment="Center" />
+            <TextBox Grid.Row="1" Grid.Column="1" Name="txtAuthor" Height="29" Margin="8,6,0,6" />
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Kibérelhető-e:" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="2" Grid.Column="1" Name="comboBox_berles" Height="31" Margin="8,6,0,6" />
+
+        </Grid>
+
+        <!-- Footer: buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,20" Panel.ZIndex="100">
+            <Button Name="button_Save"
+                    Content="Szerkesztés"
+                    Width="200"
+                    Height="36"
+                    Margin="8,0"
+                    Foreground="White"
+                    Click="Button_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#2196F3"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Name="button_Megse"
+                    Content="Mégse"
+                    Width="200"
+                    Height="36"
+                    Margin="8,0"
+                    Foreground="White"
+                    Click="button_Megse_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#9E9E9E"/>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

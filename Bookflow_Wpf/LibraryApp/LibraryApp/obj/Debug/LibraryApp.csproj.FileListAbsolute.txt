@@ -244,13 +244,11 @@ C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\AddBookWindow.baml
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\CustomMessageBox.baml
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\MainWindow.baml
-C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\RentedBooksWindow.baml
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\AddBookWindow.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\CustomMessageBox.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\EditBooksWindow.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LoginWindow.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\MainWindow.g.cs
-C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\RentedBooksWindow.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\App.g.cs
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp_MarkupCompile.cache
 C:\xampp\htdocs\Bookflow\Bookflow_Wpf\LibraryApp\LibraryApp\obj\Debug\LibraryApp_MarkupCompile.lref

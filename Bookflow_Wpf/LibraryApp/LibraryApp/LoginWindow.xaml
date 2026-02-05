@@ -9,7 +9,7 @@
         Width="800" Height="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        WindowStyle="SingleBorderWindow">
+        WindowStyle="None">
 
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
