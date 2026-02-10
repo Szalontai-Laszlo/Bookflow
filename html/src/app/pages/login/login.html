@@ -8,8 +8,10 @@
                mb-6 text-center drop-shadow-md">
       Bejelentkezés
     </h1>
-    <form name="login-form" (ngSubmit)="login()"
-          class="space-y-5">
+    <form name="login-form" 
+          (ngSubmit)="login()"
+          class="space-y-5"
+          #loginForm="ngForm">
           
       <!-- email -->
       <div>
@@ -19,12 +21,14 @@
         </label>
         <input type="email"
                id="login-email"
+               name="email"
                autocomplete="email"
                [(ngModel)]="email"
                class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                       focus:ring-rose-500 focus:outline-none"
-                [ngModelOptions]="{standalone: true}"
-               placeholder="Add meg az email címed">
+               placeholder="Add meg az email címed"
+               maxlength="150"
+               required>
       </div>
 
       <!-- jelszó -->
@@ -36,12 +40,14 @@
         <div class="relative">
           <input [type]="showPassword ? 'text' : 'password'"
                  id="login-password"
+                 name="password"
                  autocomplete="current-password"
                  [(ngModel)] = "password"
-                 [ngModelOptions]="{standalone: true}"
                  class="w-full px-4 py-2 border rounded-lg focus:ring-2 
                         focus:ring-rose-500 focus:outline-none"
-                 placeholder="Adj meg egy jelszót">
+                 placeholder="Adj meg egy jelszót"
+                 maxlength="150"
+                 required>
 
           <!-- jelszó típusát megváltoztató gomb (látható/nem látható) -->
           <button type="button" (click)="togglePassword()"
@@ -59,7 +65,10 @@
                      hover:from-rose-700 hover:to-red-700 
                      shadow-md hover:shadow-lg 
                      transform hover:scale-105 transition-all duration-500
-                     cursor-pointer">
+                     cursor-pointer"
+              [disabled]="loginForm.invalid"
+              [class.opacity-50]="loginForm.invalid"
+              [class.cursor-not-allowed]="loginForm.invalid">
         Belépés
       </button>
     </form>

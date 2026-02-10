@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
 export class Register {
+
+  name = '';
+  email = '';
+  password = '';
+  gender = '';
 
   // jelszó megjelenítés változó, aminek az alap értéke false
   showPassword = false;

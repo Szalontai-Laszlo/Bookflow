@@ -102,6 +102,7 @@ app.get("/api/users", async (req, res) => {
 
 app.post("/api/login", async (req, res) => {
   const {email, password} = req.body;
+
   if(!email || !password){
     return res.status(400).json({ message: "Hiányzó adatok" });
   }
@@ -111,17 +112,22 @@ app.post("/api/login", async (req, res) => {
       [email, password]
     );
 
+    if(rows.length === 0) {
+      return res.status(401).json({message: "Hibás email vagy jelszó"})
+    }
+
     res.json({
       success: true,
       user: rows[0]
     });
 
    
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Szerver hiba" });
   }
 });
+
 // Kölcsönzés oldalhoz szükséges lekérés
 app.get("/api/books/loan_books", async (req, res) => {
   try {
