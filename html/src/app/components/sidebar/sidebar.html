@@ -63,7 +63,8 @@
   </div>
 
   <!-- bejelentkezés részleg -->
-  <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4">
+  <div class="nav-items mt-auto flex flex-col gap-y-4 mt-4"
+       >
 
     <!-- szintén egy elválasztó vonal -->
     <hr class="my-2 text-gray-600">
@@ -72,14 +73,14 @@
          a név szintén nem jelenik meg összecsukott állapotba  -->
     <div class="nav-item mt-auto gap-x-2 p-3 flex items-center
                 rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
-         (click)="activeRoute(login, 4)" 
+         (click)="activeRoute(login)" 
          [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : login.isActive}">
-      <fa-icon [icon]="icon.faArrowRightToBracket" size="lg"></fa-icon>
+      <fa-icon [icon]="login.icon" size="lg"></fa-icon>
       <span [ngClass]="{'scale-0': true,
                        'md:scale-0': !isLeftNavOpen(),
                        'md:scale-100': isLeftNavOpen()}" 
             class="text-base font-medium duration-550 origin-left">
-        Bejelentkezés
+        {{ auth.isLoggedIn() ? (user?.name || login.label) : login.label }}
       </span>
     </div>
   </div>

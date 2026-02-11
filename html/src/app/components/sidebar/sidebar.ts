@@ -7,6 +7,7 @@ import {
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth';
 
 interface SidebarItem 
 {
@@ -20,7 +21,7 @@ interface SidebarItem
   selector: 'app-sidebar',
   imports: [FontAwesomeModule, CommonModule],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css',
+  styleUrls: ['./sidebar.css'],
 })
 export class Sidebar {
 
@@ -32,7 +33,10 @@ export class Sidebar {
   }
 
   isLeftNavOpen = signal<boolean>(true);
-  constructor(private router: Router) {}
+  constructor(private router: Router, public auth: AuthService) {
+    this.syncLogin();
+    window.addEventListener('user-changed', () => this.syncLogin());
+  }
   
   // navItems tömb, amibe különféle objektumok vannak, 
   // innen vannak kivéve a sidebar navigációs részéhez kellő iconok,
@@ -80,21 +84,47 @@ export class Sidebar {
     label: 'Bejelentkezés',
     route: '/login',
     isActive: false
-  };
+  }
+
+  private syncLogin(): void {
+    const u = this.user;
+    if (this.auth.isLoggedIn() && u && u.name) {
+      this.login.route = '/profile';
+      this.login.label = u.name;
+    } else {
+      this.login.route = '/login';
+      this.login.label = 'Bejelentkezés';
+    }
+  }
+
+  get user() {
+    try {
+      return JSON.parse(localStorage.getItem('user') || 'null');
+    } catch {
+      return null;
+    }
+  }
+  
 
   // amikor kiválasztjuk a menüelemet, 
   // frissülnek az isActive mezők és átnavigál a kiválaszott oldalra
-  activeRoute(item: SidebarItem, index: number): void { 
+  activeRoute(item: SidebarItem, index?: number): void {
+    this.navItems.forEach(n => n.isActive = false);
+    this.login.isActive = false;
 
-    // navItemsen végigmegy, és az indexhez tartozót jelöli aktívnak
-    this.navItems.forEach((navItem, i) => { 
-      navItem.isActive = i === index; 
-    }); 
+    if (item === this.login) {
+      this.login.isActive = true;
+      this.router.navigateByUrl(this.login.route); // navigál a beállított route-ra
+      return;
+    }
 
-    // hogyha a login objektum van kiválasztva, akkor az legyen aktiválva
-    this.login.isActive = item === this.login; 
+    if (typeof index === 'number' && index >= 0 && index < this.navItems.length) {
+      this.navItems[index].isActive = true;
+    } else {
+      const idx = this.navItems.findIndex(n => n.route === item.route);
+      if (idx !== -1) this.navItems[idx].isActive = true;
+    }
 
-    // átnavigál az oldalra
-    this.router.navigateByUrl(item.route); 
+    this.router.navigateByUrl(item.route);
   }
 }

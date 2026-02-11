@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
-import { Component, signal } from '@angular/core';
+import { Component, signal, ɵɵi18nApply } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth';
 
@@ -15,6 +15,14 @@ export class Login {
   email = '';
   password = '';
   error = signal("");
+
+  checkforUser() {
+    const u = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if(u){
+      this.router.navigate(['']);
+    }
+  }
 
   // jelszó megjelenítés változó, aminek az alap értéke false
   showPassword = false;
@@ -37,12 +45,15 @@ export class Login {
 
   login() {
     this.auth.login(this.email, this.password).subscribe({
-        next: () => {
-          this.router.navigate(['']);
-        },
-        error: () => {
-          this.error.set('Hibás Email vagy Jelszó')
-        }
-    })
+      next: (res) => {
+        // ha AuthService nem dispatch-el, tegyük meg itt is
+        window.dispatchEvent(new CustomEvent('user-changed', { detail: res?.user || null }));
+        // navigálás home-ra
+        this.router.navigate(['/']);
+      },
+      error: () => {
+        this.error.set('Hibás Email vagy Jelszó');
+      }
+    });
   }
 }
