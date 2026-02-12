@@ -16,7 +16,7 @@ export class Profile {
   name = '';
   email = '';
   gender = '';
-  password = ''; // opcionális: ha jelszóváltoztatást szeretnél
+  password = '';
   error = signal('');
   success = signal('');
 
@@ -35,7 +35,7 @@ export class Profile {
         this.gender = u.gender || '';
       }
     } catch {
-      // ignore
+
     }
   }
 

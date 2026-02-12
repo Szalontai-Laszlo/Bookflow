@@ -128,6 +128,16 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
+app.get("/api/update_profile", async (req, res) => {
+  try {
+    const [rows] = await db.query("UPDATE `users` SET `id`='[value-1]',`name`='[value-2]',`email`='[value-3]',`password`='[value-4]',`gender`='[value-5]',`type`='[value-6]' WHERE 1");
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
 // Kölcsönzés oldalhoz szükséges lekérés
 app.get("/api/books/loan_books", async (req, res) => {
   try {

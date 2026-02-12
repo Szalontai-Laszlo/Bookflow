@@ -26,10 +26,7 @@ export class Login {
 
   // jelszó megjelenítés változó, aminek az alap értéke false
   showPassword = false;
-  constructor(
-      private auth: AuthService,
-      private router: Router) 
-    {}
+  constructor( private auth: AuthService, private router: Router) {}
 
   // függvény, ami egy gombra van ráhúzva,
   // megnyomás esetén a showPassword értéke true lesz, és ez visszafele is működik
