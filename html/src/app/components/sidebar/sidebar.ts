@@ -15,6 +15,7 @@ interface SidebarItem
     label: string;
     route: string;
     isActive?: boolean;
+    requiresAuth?: boolean;
 }
 
 @Component({
@@ -67,7 +68,8 @@ export class Sidebar {
       icon: this.icon.faBookmark,
       label: 'Kölcsönzés',
       route: '/loan',
-      isActive: false
+      isActive: false,
+      requiresAuth: true
     },
 
     {

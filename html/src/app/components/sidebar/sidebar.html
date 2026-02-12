@@ -46,20 +46,20 @@
     <!-- ngForral létrehozzuk a navigációs menüpontokat,
          amit a navItemsből szedünk ki iconnal és labellel együtt
          a label összecsukott állapotba nem jelenik meg -->
-    <div *ngFor="let item of navItems; index as i" 
-         class="nav-item gap-x-2 p-3 flex items-center 
-                rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
-         (click)="activeRoute(item, i)" 
-         [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : item.isActive}">
-      <fa-icon [icon]="item.icon" size="lg"></fa-icon>
-      <span [ngClass]="{'scale-0': true,
-                       'md:scale-0': !isLeftNavOpen(),
-                       'md:scale-100': isLeftNavOpen()
-                      }"
-            class="text-base font-medium duration-550 origin-left">
-        {{item.label}}
-      </span>
-    </div>
+    <ng-container *ngFor="let item of navItems; index as i">
+      <div *ngIf="!item.requiresAuth || auth.isLoggedIn()"
+           class="nav-item gap-x-2 p-3 flex items-center rounded-lg hover:bg-[rgba(255,255,255,0.1)] cursor-pointer"
+        (click)="activeRoute(item, i)" 
+        [ngClass]="{'bg-[rgba(255,255,255,0.1)]' : item.isActive}">
+        <fa-icon [icon]="item.icon" size="lg"></fa-icon>
+        <span [ngClass]="{'scale-0': true,
+                         'md:scale-0': !isLeftNavOpen(),
+                         'md:scale-100': isLeftNavOpen()}" 
+              class="text-base font-medium duration-550 origin-left">
+          {{item.label}}
+        </span>
+      </div>
+    </ng-container>
   </div>
 
   <!-- bejelentkezés részleg -->
