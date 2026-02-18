@@ -3,20 +3,41 @@ import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/services/auth';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-loan',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './loan.html',
   styleUrl: './loan.css',
 })
 export class Loan {
+  name = '';
+  email = '';
+  gender = '';
+
   libraryBooks: Observable<any[]>;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: AuthService) {
       this.libraryBooks = this.fetchData();
+      this.loadUser();
   }
+
+  loadUser() {
+    try {
+      const u = JSON.parse(localStorage.getItem('user') || 'null');
+      if (u) {
+        this.name = u.name || '';
+        this.email = u.email || '';
+        this.gender = u.gender || '';
+      }
+    } catch {
+
+    }
+  }
+
   showModal = signal<boolean>(false);
   modalMessage = signal<string>('');
   modalClass = signal<string>('');

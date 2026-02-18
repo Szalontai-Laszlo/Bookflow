@@ -128,15 +128,39 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-app.get("/api/update_profile", async (req, res) => {
+app.post("/api/update_profile", async (req, res) => {
   try {
-    const [rows] = await db.query("UPDATE `users` SET `id`='[value-1]',`name`='[value-2]',`email`='[value-3]',`password`='[value-4]',`gender`='[value-5]',`type`='[value-6]' WHERE 1");
-    res.json(rows);
+    const { id, name, email, gender, password } = req.body;
+
+    if (!id) {
+      return res.status(400).json({ error: "Hiányzó user ID" });
+    }
+
+    let query = `UPDATE users SET name = ?, email = ?, gender = ?`;
+    let values = [name, email, gender];
+
+    if (password) {
+      const hashed = await bcrypt.hash(password, 10);
+      query += `, password = ?`;
+      values.push(hashed);
+    }
+
+    query += ` WHERE id = ?`;
+    values.push(id);
+
+    await db.query(query, values);
+
+    res.json({
+      message: "Sikeres frissítés",
+      user: { id, name, email, gender }
+    });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Database error" });
   }
 });
+
 
 // Kölcsönzés oldalhoz szükséges lekérés
 app.get("/api/books/loan_books", async (req, res) => {

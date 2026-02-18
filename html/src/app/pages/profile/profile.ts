@@ -41,23 +41,27 @@ export class Profile {
 
   // mentés: frissít lokalStorage-t, opcionálisan hív backendet ha van update végpont
   save() {
-    const payload: any = { name: this.name, email: this.email, gender: this.gender };
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+    const payload: any = {
+      id: user.id,
+      name: this.name,
+      email: this.email,
+      gender: this.gender
+    };
+
     if (this.password) payload.password = this.password;
 
-    // ha van /api/update_profile végpont, elküldjük; ha nincs, csak localStorage update
     this.http.post<any>(`${this.api}/update_profile`, payload).subscribe({
       next: res => {
-        // frissítjük a lokális usert (backend visszaadása esetén használhatod azt)
-        const updated = res?.user ?? payload;
-        localStorage.setItem('user', JSON.stringify({ ...JSON.parse(localStorage.getItem('user') || '{}'), ...updated }));
+        localStorage.setItem('user', JSON.stringify(res.user));
         this.success.set('Sikeres mentés');
         this.error.set('');
       },
+
       error: () => {
-        // ha nincs backend, tároljuk helyben és jelezzük sikeresnek
-        localStorage.setItem('user', JSON.stringify({ name: this.name, email: this.email, gender: this.gender }));
-        this.success.set('Mentés helyileg sikeres (backend nem elérhető)');
-        this.error.set('');
+        this.error.set('Hiba történt mentés közben');
+        this.success.set('');
       }
     });
   }
