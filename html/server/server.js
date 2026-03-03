@@ -100,6 +100,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
+// User Login
 app.post("/api/login", async (req, res) => {
   const {email, password} = req.body;
 
@@ -125,6 +126,33 @@ app.post("/api/login", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Szerver hiba" });
+  }
+});
+
+// User Register
+app.post('/api/register', async (req, res) => {
+  const { name, email, password, gender } = req.body;
+  if (!name || !email || !password || !gender) {
+    return res.status(400).json({ message: 'Hiányzó adatok' });
+  }
+
+  try {
+    const [rows] = await db.query('SELECT id FROM users WHERE email = ?', [email]);
+    if (rows.length) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+
+    // FIGYELEM: egyszerű, plaintext tárolás (azonnal működik, de nem biztonságos)
+    const [result] = await db.query(
+      'INSERT INTO users (name, email, password, gender, created_at) VALUES (?, ?, ?, ?, NOW())',
+      [name, email, password, gender]
+    );
+
+    const user = { id: result.insertId, name, email, gender };
+    res.status(201).json({ message: 'User registered successfully', user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
