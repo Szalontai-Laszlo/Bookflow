@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\2025-2026\\vizsgaremek\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -15,11 +19,7 @@
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\addbookwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|c:\\xampp\\htdocs\\2025-2026\\vizsgaremek\\bookflow\\bookflow_wpf\\libraryapp\\libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C5E6A5BE-E858-4A62-82CC-D0A74C337353}|LibraryApp\\LibraryApp.csproj|solutionrelative:libraryapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LoginWindow.xaml",
               "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\LoginWindow.xaml",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddBookWindow.xaml.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\AddBookWindow.xaml.cs",
@@ -63,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddBookWindow.xaml",
               "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\AddBookWindow.xaml",
               "RelativeDocumentMoniker": "LibraryApp\\AddBookWindow.xaml",
@@ -75,13 +75,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "LoginWindow.xaml.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "LibraryApp\\LoginWindow.xaml.cs",
               "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\LoginWindow.xaml.cs",
               "RelativeToolTip": "LibraryApp\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwB4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-05T13:33:12.785Z",
               "EditorCaption": ""
@@ -95,8 +95,7 @@
               "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\Vizsgaremek\\Bookflow\\Bookflow_Wpf\\LibraryApp\\LibraryApp\\MainWindow.xaml",
               "RelativeToolTip": "LibraryApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-04T16:11:56.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T16:11:56.109Z"
             },
             {
               "$type": "Document",
@@ -108,8 +107,7 @@
               "RelativeToolTip": "LibraryApp\\MainWindow.xaml.cs",
               "ViewState": "AgIAALIAAAAAAAAAAAAIwLsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T16:11:58.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T16:11:58.379Z"
             }
           ]
         }
