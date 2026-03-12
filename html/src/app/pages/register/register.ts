@@ -49,7 +49,7 @@ export class Register {
 
     const payload = { name: this.name, email: this.email, password: this.password, gender: this.gender };
     this.http.post<any>(`${this.api}/register`, payload).subscribe({
-      next: () => {
+      next: (res) => {
         this.success.set('Sikeres regisztráció. Jelentkezz be.');
         this.error.set('');
         this.router.navigate(['/login']);

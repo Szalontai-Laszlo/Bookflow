@@ -87,7 +87,10 @@ namespace LibraryApp
         public void DataGridFeltoltes()
         {
             // Adatbázis lekérdezése a könyvek adataival, majd a DataGrid feltöltése ezekkel az adatokkal
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT `books`.id AS `Számozás`, `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`, CASE WHEN `books`.status = 1 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id;", connection);
+            MySqlDataAdapter adapter = 
+                new MySqlDataAdapter("SELECT `books`.id AS `Számozás`, `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`, CASE WHEN `books`.status = 1 " +
+                                     "THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id;",
+                connection);
             booksTable = new DataTable();
             adapter.Fill(booksTable);
             // Sorok szűrésénél ne legyen érzékeny a kis- és nagybetűkre

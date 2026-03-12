@@ -173,7 +173,9 @@ namespace LibraryApp
                             }
                         }
                         // Könyv beszúrása a kapott authorId és categoryId értékekkel, valamint a többi könyv adatával
-                        using (var insertBook = new MySqlCommand("INSERT INTO books (`title`, `author_id`, `category_id`, `description`, `img`, `status`) VALUES (@title, @authorId, @categoryId, @desc, @img, @status)", connection, transaction))
+                        using (var insertBook = 
+                            new MySqlCommand("INSERT INTO books (`title`, `author_id`, `category_id`, `description`, `img`, `status`) VALUES (@title, @authorId, @categoryId, @desc, @img, @status)",
+                            connection, transaction))
                         {
                             insertBook.Parameters.AddWithValue("@title", title);
                             insertBook.Parameters.AddWithValue("@authorId", authorId);

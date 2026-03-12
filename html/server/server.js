@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
+const bcrypt = require('bcryptjs');
 
 // Könyvek lekérése
 app.get("/api/books", async (req, res) => {
@@ -131,28 +131,22 @@ app.post("/api/login", async (req, res) => {
 
 // User Register
 app.post('/api/register', async (req, res) => {
-  const { name, email, password, gender } = req.body;
-  if (!name || !email || !password || !gender) {
-    return res.status(400).json({ message: 'Hiányzó adatok' });
-  }
-
+  console.log('[REGISTER] body:', req.body);
   try {
-    const [rows] = await db.query('SELECT id FROM users WHERE email = ?', [email]);
-    if (rows.length) {
-      return res.status(400).json({ message: 'Email already exists' });
+    const { name, email, password, gender } = req.body;
+    if (!name || !email || !password || !gender) {
+      return res.status(400).json({ message: 'Hiányzó adatok' });
     }
-
-    // FIGYELEM: egyszerű, plaintext tárolás (azonnal működik, de nem biztonságos)
+    // egyszerű debug insert (plaintext) — csak teszteléshez
     const [result] = await db.query(
       'INSERT INTO users (name, email, password, gender, created_at) VALUES (?, ?, ?, ?, NOW())',
       [name, email, password, gender]
     );
-
-    const user = { id: result.insertId, name, email, gender };
-    res.status(201).json({ message: 'User registered successfully', user });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.log('[REGISTER] inserted id:', result.insertId);
+    return res.status(201).json({ message: 'User registered (debug)', user: { id: result.insertId, name, email, gender }});
+  } catch (err) {
+    console.error('[REGISTER] ERROR:', err.stack || err);
+    return res.status(500).json({ message: 'Szerver hiba', details: err.message });
   }
 });
 

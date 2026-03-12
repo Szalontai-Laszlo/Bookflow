@@ -61,7 +61,8 @@
                  placeholder="Add meg a jelszavad"
                  id="register-password"
                  maxlength="150"
-                 required>
+                 required
+                 autocomplete>
 
           <!-- jelszó típusát megváltoztató gomb (látható/nem látható) -->
           <button type="button" 
@@ -76,7 +77,7 @@
       <div>
         <label for="register-passwordValidate" 
                class="block text-gray-700 font-medium mb-2">
-          Jelszó
+          Jelszó megerősítés
         </label>
         <div class="relative">
           <input [type]="showPassword ? 'text' : 'password'"
@@ -87,7 +88,8 @@
                  placeholder="Add meg a jelszavad"
                  id="register-passwordValidate"
                  maxlength="150"
-                 required>
+                 required
+                 autocomplete>
 
           <!-- jelszó típusát megváltoztató gomb (látható/nem látható) -->
           <button type="button" 
@@ -98,6 +100,10 @@
           </button>
         </div>
       </div>
+      <p *ngIf="password && passwordValidate && password !== passwordValidate" 
+         class="text-red-600 text-sm">
+        A jelszavak nem egyeznek.
+      </p>
 
       <!-- nem választó -->
       <div>
