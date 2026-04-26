@@ -52,7 +52,7 @@
                          border-gray-300 focus:ring-2 focus:ring-blue-500"
                   id="loan-book_name"
                   required>
-            <option *ngFor="let book of libraryBooks | async; index as i">
+            <option *ngFor="let book of libraryBooks | async; index as i" [value]="book.id">
               {{ book.title }} - {{ book.author }}
             </option>
           </select>

@@ -137,13 +137,21 @@ app.post('/api/register', async (req, res) => {
     if (!name || !email || !password || !gender) {
       return res.status(400).json({ message: 'Hiányzó adatok' });
     }
-    // egyszerű debug insert (plaintext) — csak teszteléshez
-    const [result] = await db.query(
-      'INSERT INTO users (name, email, password, gender, created_at) VALUES (?, ?, ?, ?, NOW())',
-      [name, email, password, gender]
-    );
-    console.log('[REGISTER] inserted id:', result.insertId);
-    return res.status(201).json({ message: 'User registered (debug)', user: { id: result.insertId, name, email, gender }});
+    try {
+      const [result] = await db.query(
+        'INSERT INTO users (name, email, password, gender, type) VALUES (?, ?, ?, ?, ?)',
+        [name, email, password, gender, 'U']
+      );
+      console.log('[REGISTER] inserted id:', result.insertId);
+      return res.status(201).json({ message: 'User registered', user: { id: result.insertId, name, email, gender, type: 'U' }});
+    } catch (dbErr) {
+      // Egyedi email hiba kezelése
+      if (dbErr.code === 'ER_DUP_ENTRY') {
+        return res.status(409).json({ message: 'Ez az email már foglalt.' });
+      }
+      console.error('[REGISTER] DB ERROR:', dbErr.stack || dbErr);
+      return res.status(500).json({ message: 'Adatbázis hiba', details: dbErr.message });
+    }
   } catch (err) {
     console.error('[REGISTER] ERROR:', err.stack || err);
     return res.status(500).json({ message: 'Szerver hiba', details: err.message });
@@ -188,6 +196,7 @@ app.post("/api/update_profile", async (req, res) => {
 app.get("/api/books/loan_books", async (req, res) => {
   try {
     const [rows] = await db.query(`SELECT 
+                                      books.id,
                                       books.title AS 'title',
 		                                  authors.name AS 'author'
                                     FROM books 
@@ -206,6 +215,34 @@ app.get("/api/books/loan_books", async (req, res) => {
 app.get("/api/users/:id", async (req, res) => {
   res.params.id
 })
+
+// Kölcsönzés rögzítése a borrows táblába
+app.post("/api/borrows", async (req, res) => {
+  try {
+    const { book_id, user_id, borrow_start, borrow_end } = req.body;
+
+    if (!book_id || !user_id || !borrow_start || !borrow_end) {
+      return res.status(400).json({ message: 'Hiányzó adatok' });
+    }
+
+    const [result] = await db.query(
+      'INSERT INTO borrows (book_id, user_id, borrow_start, borrow_end) VALUES (?, ?, ?, ?)',
+      [book_id, user_id, borrow_start, borrow_end]
+    );
+
+    // Frissítsük a könyv statuszát 0-ra (kikölcsönzött)
+    await db.query('UPDATE books SET status = 0 WHERE id = ?', [book_id]);
+
+    res.status(201).json({ 
+      message: 'Kölcsönzés sikeresen rögzítve', 
+      borrowId: result.insertId 
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
 
 const PORT = 3000;
 app.listen(PORT, () => console.log("A Backend szerver elindult a: " + PORT +"res porton."));

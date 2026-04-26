@@ -86,11 +86,21 @@ namespace LibraryApp
 
         public void DataGridFeltoltes()
         {
-            // Adatbázis lekérdezése a könyvek adataival, majd a DataGrid feltöltése ezekkel az adatokkal
-            MySqlDataAdapter adapter = 
-                new MySqlDataAdapter("SELECT `books`.id AS `Számozás`, `books`.title AS `Könyv Cime`, `authors`.name AS `Szerző`, CASE WHEN `books`.status = 1 " +
-                                     "THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` FROM `books` INNER JOIN `authors` ON `books`.author_id = `authors`.id;",
-                connection);
+            // Adatbázis lekérdezése a könyvek adataival, a legutóbbi kölcsönzés és a felhasználó nevének csatolásával
+            MySqlDataAdapter adapter =
+                new MySqlDataAdapter(
+                    "SELECT b.id AS `Számozás`, b.title AS `Könyv Cime`, a.name AS `Szerző`, " +
+                    "lb.borrow_start AS `Bérlés kezdése`, lb.borrow_end AS `Bérlés vége`, u.name AS `Kölcsönző`, " +
+                    "CASE WHEN b.status = 1 THEN 'Kibérelhető' ELSE 'Kibérelt' END AS `status` " +
+                    "FROM `books` b " +
+                    "LEFT JOIN `authors` a ON b.author_id = a.id " +
+                    "LEFT JOIN ( " +
+                    "  SELECT br.* FROM borrows br " +
+                    "  INNER JOIN (SELECT book_id, MAX(borrow_start) AS max_start FROM borrows GROUP BY book_id) mx " +
+                    "    ON br.book_id = mx.book_id AND br.borrow_start = mx.max_start " +
+                    ") lb ON b.id = lb.book_id " +
+                    "LEFT JOIN `users` u ON lb.user_id = u.id;",
+                    connection);
             booksTable = new DataTable();
             adapter.Fill(booksTable);
             // Sorok szűrésénél ne legyen érzékeny a kis- és nagybetűkre

@@ -48,14 +48,20 @@ export class Register {
     }
 
     const payload = { name: this.name, email: this.email, password: this.password, gender: this.gender };
-    this.http.post<any>(`${this.api}/register`, payload).subscribe({
+    this.http.post<any>(`http://localhost:3000/api/register`, payload).subscribe({
       next: (res) => {
         this.success.set('Sikeres regisztráció. Jelentkezz be.');
         this.error.set('');
         this.router.navigate(['/login']);
       },
       error: err => {
-        this.error.set(err?.error?.message || 'Regisztráció közben hiba történt.');
+        if (err.status === 409) {
+          this.error.set('Ez az email már foglalt.');
+        } else if (err?.error?.message) {
+          this.error.set(err.error.message);
+        } else {
+          this.error.set('Regisztráció közben hiba történt.');
+        }
         this.success.set('');
       }
     });

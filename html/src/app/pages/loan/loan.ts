@@ -17,6 +17,11 @@ export class Loan {
   name = '';
   email = '';
   gender = '';
+  userId = 0;
+  
+  selectedBookId = 0;
+  borrowStart = '';
+  borrowEnd = '';
 
   libraryBooks: Observable<any[]>;
 
@@ -32,6 +37,7 @@ export class Loan {
         this.name = u.name || '';
         this.email = u.email || '';
         this.gender = u.gender || '';
+        this.userId = u.id || 0;
       }
     } catch {
 
@@ -44,20 +50,57 @@ export class Loan {
 
   // függvény, ami sikeres gomblenyomás esetén feldob egy modalt
   onRentSubmit() {
-    this.modalMessage.set('Sikeres kölcsönzés');
-    this.showModal.set(true);
-    this.modalClass.set('fade-in-up');
+    // Összegyűjtjük a kölcsönzés adatait
+    const bookSelect = document.getElementById('loan-book_name') as HTMLSelectElement;
+    const startInput = document.getElementById('loan-from') as HTMLInputElement;
+    const endInput = document.getElementById('loan-when') as HTMLInputElement;
 
-    // 2.5 másodperc után indítsuk el a fade-out animációt
-    setTimeout(() => {
-      this.modalClass.set('fade-out-down');
-    }, 2500);
+    if (!bookSelect || !startInput || !endInput) {
+      return;
+    }
 
-    // 3 másodperc után zárjuk be a modalt
-    setTimeout(() => {
-      this.showModal.set(false);
-      this.modalMessage.set('');
-    }, 3000);
+    // A könyv ID kinyerése a selectből
+    this.selectedBookId = parseInt(bookSelect.value);
+    this.borrowStart = startInput.value;
+    this.borrowEnd = endInput.value;
+
+    if (!this.selectedBookId || !this.borrowStart || !this.borrowEnd) {
+      this.modalMessage.set('Kérjük, töltse ki az összes mezőt');
+      this.showModal.set(true);
+      this.modalClass.set('fade-in-up');
+      return;
+    }
+
+    // Küldés a backendnek
+    this.http.post('http://localhost:3000/api/borrows', {
+      book_id: this.selectedBookId,
+      user_id: this.userId,
+      borrow_start: this.borrowStart,
+      borrow_end: this.borrowEnd
+    }).subscribe({
+      next: (response: any) => {
+        this.modalMessage.set('Sikeres kölcsönzés');
+        this.showModal.set(true);
+        this.modalClass.set('fade-in-up');
+
+        // 2.5 másodperc után indítsuk el a fade-out animációt
+        setTimeout(() => {
+          this.modalClass.set('fade-out-down');
+        }, 2500);
+
+        // 3 másodperc után zárjuk be a modalt
+        setTimeout(() => {
+          this.showModal.set(false);
+          this.modalMessage.set('');
+        }, 3000);
+      },
+      error: (err) => {
+        console.error('Hiba a kölcsönzés rögzítése közben:', err);
+        this.modalMessage.set('Hiba a kölcsönzés rögzítése közben');
+        this.showModal.set(true);
+        this.modalClass.set('fade-in-up');
+      }
+    });
   }
   private http = inject(HttpClient)
   fetchData() {
