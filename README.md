@@ -46,7 +46,10 @@ https://localhost:4200/
 ```
 # Adminisztrátori Panel (WPF)
 
+### 1. lépés
 
+- Adatbázis feltöltése a MySql-be, majd elindítani a Xampp-ot
+- Elindítani a C# alkalmazást, és be kell jelentkezni admin fiókkal
 
 # Projekthez tartozó linkek
 - https://github.com/Szalontai-Laszlo/Bookflow
