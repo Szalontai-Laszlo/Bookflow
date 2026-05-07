@@ -50,7 +50,7 @@ export class Register {
     const payload = { name: this.name, email: this.email, password: this.password, gender: this.gender };
     this.http.post<any>(`http://localhost:3000/api/register`, payload).subscribe({
       next: (res) => {
-        this.success.set('Sikeres regisztráció. Jelentkezz be.');
+        alert('Sikeres regisztráció. Jelentkezz be.');
         this.error.set('');
         this.router.navigate(['/login']);
       },
